@@ -1,9 +1,5 @@
-const buttonopen = document.querySelector('.mobile-open-btn'); 
-const menu = document.querySelector('.mobile-menu'); 
-const buttonclose = document.querySelector('.button-close');
-const onToggleMenuHandlerOP = () => menu.classList.toggle('is-open'); 
-const onToggleMenuHandlerCL = () => menu.classList.toggle('is-open');
-buttonopen.addEventListener('click', onToggleMenuHandlerOP); 
-buttonclose.addEventListener('click', onToggleMenuHandlerCL);
-
+import Accordion from 'accordion-js';
+import 'accordion-js/dist/accordion.min.css';
+import Swiper from 'swiper';
+import 'swiper/css';
 
