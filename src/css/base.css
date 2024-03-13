@@ -1,0 +1,63 @@
+
+body {
+    font-family: 'Manrope', sans-serif;
+    color: #FCF9F9;;
+    background-color: #1C2225;
+    margin: 0 auto;
+
+}
+
+.accent-color {
+    color: #ECD979;
+}
+
+/* 250ms linear */
+
+.container {
+    min-width: 320px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media screen and (min-width: 375px) {
+    .container {
+        margin: 0 auto;
+        width: 375px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .container {
+        width: 1112px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        width: 1272px;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}

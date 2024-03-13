@@ -1,0 +1,147 @@
+.header-page {
+    padding-top: 20px;
+    padding-bottom: 24px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-menu {
+    display: none;
+}
+
+.address-info {
+    display: none;
+}
+
+.header-right-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+
+
+.navigation-link {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.29;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    transition: color 250ms linear;
+}
+
+.navigation-link:hover,
+.navigation-link:focus {
+    color: #ECD979;
+}
+
+
+.contact-information {
+    display: block;
+    padding: 14px 28px;
+    border-radius: 15px;
+    border: 1px solid rgba(252, 249, 249, 0.10);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    transition: border 250ms linear;
+}
+
+.contact-information:hover,
+.contact-information:focus {
+    border-color: #ECD979;
+}
+
+
+.social-link-list {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid rgba(252, 249, 249, 0.10);
+    background: rgba(252, 249, 249, 0.10);
+    transition: border 250ms linear;
+}
+
+.header-link:focus,
+.header-link:hover {
+    border-color: #ECD979;
+}
+
+.header-icons {
+    fill: #FCF9F9;
+    opacity: 0.8;
+}
+
+.mobile-open-btn-icon {
+    stroke: #ECD979;
+}
+
+.mobile-open-btn {
+    background-color: transparent;
+    border: none;
+    line-height: 0;
+    letter-spacing: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+
+    .header-page {
+        padding-bottom: 44px;
+    }
+
+    .header-right-part {
+        gap: 20px;
+    }
+
+    .mobile-open-btn-icon {
+        width: 54px;
+        height: 40px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+
+    .header-page {
+        padding-bottom: 4px;
+        }
+
+    .mobile-open-btn {
+        display: none;
+    }
+
+    .address-info {
+        display: block;
+    }
+
+    .navigation-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+    }
+}

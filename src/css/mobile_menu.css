@@ -1,0 +1,126 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 274px;
+  height: 100%;
+
+  background-color: #ecd979;
+  background-image: url('../img/mobile/mobile-menu-background.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 251px 20px;
+  z-index: 9999999;
+  transform: translateX(100%);
+  transition: transform 250ms linear;
+}
+
+.mobile-menu.is-open {
+  transform: translateX(0%);
+}
+
+@media screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx),
+  screen and (min-device-pixel-ratio: 2) {
+  .mobile-menu {
+    background-image: url('../img/mobile/mobile-menu-background@2x.png');
+  }
+}
+
+.button-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 0;
+}
+
+.close-img {
+  width: 36px;
+  height: 36px;
+  stroke: #1c2225;
+}
+
+.tell-box {
+  padding: 12px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(28, 34, 37, 0.1);
+  margin-right: auto;
+}
+.menu-tel {
+  margin: 0;
+  padding: 0;
+  color: #1c2225;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  text-transform: uppercase;
+}
+
+.main-nav-box {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.main-nav-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+.main-nav-link {
+  color: #1c2225;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    width: 380px;
+    padding: 20px 32px 364px;
+    background-image: url('../img/tablet/tablet-menu-background.png');
+  }
+
+  @media screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx),
+    screen and (min-device-pixel-ratio: 2) {
+    .mobile-menu {
+      background-image: url('../img/tablet/tablet-menu-background@2x.png');
+    }
+  }
+
+  .button-close {
+    right: 32px;
+  }
+
+  .close-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .menu-tel {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .mobile-menu {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}

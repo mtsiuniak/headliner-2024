@@ -1,0 +1,171 @@
+.our-colection {
+    padding-top: 18px;
+    padding-bottom: 80px;
+    background-image: url(../img/mobile/mobile-ourcollection-background.png);
+    background-repeat: no-repeat;
+    background-position: 0 11%;
+    background-size: 72px 177px;
+}
+
+@media screen and (min-resolution: 192dpi) and (max-width: 768px),
+screen and (min-resolution: 2dppx) and (max-width: 768px),
+screen and (min-device-pixel-ratio: 2) and (max-width: 768px) {
+    .our-colection {
+        background-image: url('../img/mobile/mobile-ourcollection-background@2x.png');
+    }
+}
+
+.section-title {
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: Manrope;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.03em;
+    color: var(--white, #FCF9F9);
+
+}
+
+.our-colection-list {
+    display: flex;
+    width: 335px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.our-colection-card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.our-colection-card-img {
+    border-radius: 4px;
+    height: auto;
+
+}
+
+.our-colection-information {
+    display: flex;
+    width: 335px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.our-colection-clothes-name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    max-width: 335px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--white, #FCF9F9);
+}
+
+.our-colection-price {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    color: rgba(252, 249, 249, 0.40);
+}
+
+@media screen and (min-width: 768px) {
+
+    .our-colection {
+        padding-top: 50px;
+        padding-bottom: 100px;
+        background-image: url(../img/tablet/tablet-ourcollection-background.png);
+        background-repeat: no-repeat;
+        background-position: 0 17%;
+        background-size: 116px 300px;
+    }
+
+    @media screen and (min-resolution: 192dpi) and (min-width: 768px),
+    screen and (min-resolution: 2dppx) and (min-width: 768px),
+    screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
+        .our-colection {
+            background-image: url('../img/tablet/tablet-ourcollection-background@2x.png');
+        }
+    }
+
+    .section-title {
+        font-size: 44px;
+        line-height: 1.45;
+    }
+
+    .our-colection-list {
+        width: 704px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 20px;
+        row-gap: 20px;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .our-colection-card-item {
+        width: calc((100% - 20px) / 2);
+    }
+
+    .our-colection-clothes-name {
+
+        font-size: 18px;
+    }
+
+    .our-colection-price {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+
+    .our-colection {
+        padding-top: 70px;
+        padding-bottom: 150px;
+        background-position: 0 25%;
+        background-size: 169px 300px;
+        background-image: url('../img/desktop-1280/desktop-ourcollection-background.png');
+    }
+
+    @media screen and (min-resolution: 192dpi) and (min-width: 1280px),
+    screen and (min-resolution: 2dppx) and (min-width: 1280px),
+    screen and (min-device-pixel-ratio: 2) and (min-width: 1280px) {
+        .our-colection {
+            background-image: url('../img/desktop-1280/desktop-ourcollection-background@2x.png');
+        }
+    }
+
+    .section-title {
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .our-colection-list {
+        width: 1082px;
+        row-gap: 40px;
+    }
+
+    .our-colection-card-item {
+        width: calc((100% - 40px) / 3);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .our-colection-list {
+        width: 1240px;
+    }
+
+    .our-colection {
+        background-position: 0 28%;
+    }
+
+}

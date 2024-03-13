@@ -1,0 +1,43 @@
+<section class="order-section section-background">
+  <div class="order-background-girl padding-background-girl"></div>
+  <div class="order-section-wrapper container">
+    <div class="order-form-box">
+      <h2 class="order-title" id="customer-order">
+        <span class="accent-color">Your order</span> is our priority:
+        Personalized approach and quality of service
+      </h2>
+      <form class="order-form">
+        <label class="order-form-field-label" for="user-name">
+          <input class="order-form-field" type="text" name="user-name" id="user-name" required
+            placeholder="Enter your full name" pattern="[a-zA-Zа-яА-ЯіЇіІєЄйЙґҐ']+" />
+        </label>
+
+        <label class="order-form-field-label" for="user-email">
+          <input class="order-form-field" type="email" name="user-email" id="user-email" placeholder="Enter your email"
+            required />
+        </label>
+
+        <label class="order-form-field-label" for="user-comments">
+          <textarea class="order-form-comments" name="user-comments" id="user-comments"
+            placeholder="Comments"></textarea>
+        </label>
+        <button class="order-form-btn" type="submit">
+          Send
+          <svg class="order-form-btn-icon" width="26" height="10">
+            <use href="./img/icons.svg#icon-arrow"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="order-form-image-wrapper">
+      <img class="order-form-image" srcset="
+          ./img/desktop-1440/desktop1440-yourorder@2x.jpg 1048w,
+          ./img/tablet/tablet-yourorder@2x.jpg            1276w,
+          ./img/desktop-1440/desktop1440-yourorder.jpg     524w,
+          ./img/tablet/tablet-yourorder.jpg                638w,
+          
+        " sizes="(min-width:1280px) 524px,        
+              (max-width:1279px) 638px" src="./img/desktop-1440/desktop-yourorder.jpg" alt="order image" />
+    </div>
+  </div>
+</section>
