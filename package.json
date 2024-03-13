@@ -1,11 +1,11 @@
 {
-  "name": "vanilla-app-template",
+  "name": "headliner-2024",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/headliner-2023/",
+    "build": "vite build --base=/headliner-2024/",
     "preview": "vite preview"
   },
   "devDependencies": {
