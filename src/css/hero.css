@@ -1,1 +1,120 @@
 /* css */
+/* style for desktop */
+ 
+
+
+
+
+
+ /* mobile style */
+ .hero-section {
+     padding-top: 282px;
+     padding-bottom: 26px;
+    
+ }
+ .hero-container {
+
+     display: flex;
+     flex-direction: column;
+     gap: 85px;
+ }
+
+ .hero-list {
+     display: flex;
+     flex-direction: row;
+     gap: 4px;
+     justify-content: center;
+     margin-left: auto;
+     
+    
+ }
+
+ .hero-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: #fafafa;
+ }
+ 
+ .hero-title {
+     display: block;
+     font-weight: 500;
+     font-size: 50px;
+     line-height: 100%;
+     letter-spacing: -0.03em;
+     text-transform: uppercase;
+     color: #fafafa;
+     width: 373px;
+ }
+
+.hero-button-link {
+    border: 1px solid rgba(250, 250, 250, 0.2);
+    border-radius: 60px;
+    padding: 10px 12px;
+    width: 37px;
+    height: 37px;
+}
+
+.hero-button-email {
+    border: 1px solid rgba(250, 250, 250, 0.2);
+    border-radius: 60px;
+    padding: 10px 12px;
+    width: 178px;
+    height: 37px;
+}
+
+.hero-link {
+    text-transform: uppercase;
+    
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .hero-section {
+    padding-top: 310px;    
+    }
+
+    .hero-title {
+    font-size: 90px;
+    width: 632px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .hero-button-link {
+    padding: 18px 20px;
+    width: 55px;
+    height: 55px;
+ }
+ .hero-button-email {
+    padding: 18px 24px;
+    width: 223px;
+    height: 55px;
+ }
+ .hero-item {
+    font-size: 16px;
+ }
+.hero-list {
+    justify-content: flex-end;
+
+}
+
+
+}
+
+@media screen and (min-width: 1440px) {
+    .hero-title {
+    width: 1084px;
+    }
+
+
+
+}
+
+
+
+
+
