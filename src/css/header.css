@@ -25,7 +25,7 @@ position: absolute;
     .btn-menu{
     display: none;
     }
-    .order{
+    .order-btn-menu{
      display: none;
     }
     /*TABLET*/
@@ -45,9 +45,9 @@ position: absolute;
         justify-content: center;
     }
     
-      .order{
+      .order-btn-menu{
         display: flex;
-        background: #ed3b44;
+        background-color: #ed3b44;
         border-radius: 60px;
       padding: 18px 24px;
       width: 163px;
@@ -57,11 +57,13 @@ position: absolute;
       font-size: 16px;
       letter-spacing: -0.02em;
       color: #fafafa;
-      transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+     
       }
-      .order:hover,
-      .order:focus{
-        background: #e0373f;
+      .order-btn-menu:hover,
+      .order-btn-menu:focus
+      {
+        background-color:#E0373F;
       }
       .menu-tablet-deck{
       background: none;
@@ -78,7 +80,7 @@ position: absolute;
     /* LAPTOP */
     @media screen and (min-width: 1440px) {
       .box-container {
-      
+      width:1440px
       }
       
     }
