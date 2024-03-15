@@ -13,7 +13,7 @@ function heroBackgroundImage() {
                 const randomIndex = Math.floor(Math.random() * backgrounds.length);
                 const randomClass = backgrounds[randomIndex];
                 backgroundImageHero.classList.add(randomClass);
-            }, 2000)   
+            }, 4000)   
     }
 heroBackgroundImage();
 //  /hero background-image 
