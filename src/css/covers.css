@@ -122,7 +122,7 @@
 @media (min-width: 768px) {
     .covers-section {
         max-width: 768px;
-        background: url(../img/covers-img/cover-img-desktop-tablet/bg-covers-desktop.png);
+        background: url(../img/covers-img/cover-img-desktop-tablet/bg-covers-tablet.png);
         background-size: 768px 960px;
     }
 
@@ -226,6 +226,7 @@
         }
     .covers-section {
         max-width: 1440px;
+        background: url(../img/covers-img/cover-img-desktop-tablet/bg-covers-desktop.png);
         background-size: 1440px 960px;
     }
 }
