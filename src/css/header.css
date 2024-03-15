@@ -21,6 +21,9 @@
   width: 84px;
   height: 19px;
 }
+.logo-img{
+  border-radius: 20px;
+}
 .btn-menu {
   display: none;
 }
@@ -130,6 +133,6 @@
 /* LAPTOP */
 @media screen and (min-width: 1440px) {
   .box-container {
-    width: 1440px;
+    max-width: 1440px;
   }
 }

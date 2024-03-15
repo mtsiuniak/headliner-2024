@@ -6,22 +6,25 @@
             <source
             media="(min-width:375px)"
             srcset="
-            ../img/header/image.png 1x,
-            ../img/header/image@2x.png 2x
+            ../img/header/image1x.jpg 1x,
+            ../img/header/image2x.jpg 2x
             "
           />
           <img
-            src="../img/header/image.png"
+            src="../img/header/image1x.jpg"
             alt="logo"
             width="80"
           height="80"
+          class="logo-img"
           />
           </picture>
          <img src="../img/logo.svg" alt="name" class="logo-svg">
           </svg>
     </div>
     <button type="button" class="button-menu" type="button">
-   <img src="../img/menu-icon.svg" alt="menu" class="">
+      <svg class="svg-x-mob" width="28" height="28">
+        <use href="./img/icon.svg#icon-modal_on"></use>
+        </svg>
       </svg>
     </button>
     <div class="btn-menu">
@@ -34,10 +37,12 @@
     </button>
     </div>
     <!-- mob menu -->
-    <div class="menu-box ">
+    <div class="menu-box visually-hidden">
 
           <button type="button" class="button-mob-menu">
-           <img src="../img/x-icon.svg" alt="close-btn-menu" width="28" height="28">
+            <svg class="svg-x-mob" width="28" height="28">
+              <use href="./img/icon.svg#icon-modal_off"></use>
+              </svg>
           </button>
 
           <ul class="mob-list-menu">
