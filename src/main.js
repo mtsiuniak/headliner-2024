@@ -6,7 +6,7 @@ import 'swiper/css';
 const backgroundImageHero = document.querySelector('#hero-section');
 function heroBackgroundImage() {
     
-    const backgrounds = ['red', 'pink', 'blue', 'green', 'grey', 'orange'];
+    const backgrounds = ['red', 'pink', 'blue', 'green'];
             
             setInterval(function changeBackground() {
                 backgroundImageHero.className = '';
