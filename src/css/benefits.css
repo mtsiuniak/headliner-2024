@@ -14,7 +14,9 @@ display: flex;
 
         font-size: 16px;
         font-weight: 600;
-        line-height: 24px;
+        line-height: 1.5; 
+
+
         letter-spacing: -0.02em;
         text-align: left;
         text-transform: uppercase;
@@ -52,7 +54,7 @@ display: flex;
      color: rgb(250, 250, 250);
      font-size: 20px;
      font-weight: 600;
-     line-height: 30px;
+     line-height: 1.5;
      letter-spacing: -0.02em;
      text-align: left;
  }
@@ -60,7 +62,7 @@ display: flex;
         color: rgba(250, 250, 250, 0.6);
         font-size: 16px;
         font-weight: 500;
-        line-height: 24px;
+        line-height: 1.5;
         letter-spacing: -0.02em;
         text-align: left;
  }
@@ -126,6 +128,7 @@ stroke: rgb(255, 255, 255);
         column-gap: 16px;
         row-gap: 16px;
         justify-content: center;
+        margin-bottom: 64px;
 
  }
 
@@ -135,4 +138,36 @@ stroke: rgb(255, 255, 255);
  .benefits-card-item {
      width: calc((100% - 16px) / 2);
  }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        width: 1376px;
+    }
+
+.benefits-box {
+display: flex;
+    
+    flex-direction: column;
+    
+    /* align-items: center; */
+}
+.benefits-title-and-list {
+    display: flex;
+    justify-content: space-between;
+   
+    /* flex-direction: column; */
+}
+.benefits-order-btn {
+   
+    
+}
+.benefits-box-btn{
+display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 100px;
+}
+
 }
