@@ -2,6 +2,7 @@
 /* hero */
  /* mobile style */
  #hero-section{
+    margin: 0 auto;
     padding-top: 282px;
     padding-bottom: 32px;
  }
