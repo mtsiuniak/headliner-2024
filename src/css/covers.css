@@ -15,110 +15,39 @@
       height: 508px;
   }
   
+  .content {
+      position: relative;
+  }
 
-  .covers-item img {
-      display: block;
-      width: 282px;
-      height: 100%;
+  .marquee {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+  }
+
+  .marquee__inner {
+      display: flex;
+      gap: 30px;
+      
+  }
+  .marquee__inner {
+      margin-bottom: 30px;
       transform: rotate(16deg);
   }
-  .covers-item {
-      width: 282.29px;
+
+  .marquee__line {
+      flex-shrink: 0;
+      min-width: 282.29px;
       height: 162.94px;
+      white-space: nowrap;
+      animation-name: marqueeLine;
+      animation-duration: 15s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
   }
+ 
 
-
-  .rec1 {
-    /* Rectangle 1 */
-        position: absolute;
-        left: 88.77px;
-        right: 3.94px;
-        top: 150.17px;
-        bottom: 194.89px;
-    }
-
-  .rec9 {
-    /* Rectangle 9 */
-        position: absolute;
-        left: -133.47px;
-        right: 226.18px;
-        top: 278.98px;
-        bottom: 66.08px;
-  }
-
-  .rec7 {
-    /* Rectangle 7 */
-        position: absolute;
-        left: 302.04px;
-        right: -209.34px;
-        top: 15.77px;
-        bottom: 329.29px;
-  }
-
-  .rec8 {
-    /* Rectangle 8 */
-        position: absolute;
-        left: 377.14px;
-        right: -284.44px;
-        top: 236.43px;
-        bottom: 108.63px;
-  }
-
-  .rec6 {
-    /* Rectangle 6 */
-        position: absolute;
-        left: 547.87px;
-        right: -455.16px;
-        top: -111.25px;
-        bottom: 456.31px;
-  }
-
-  .rec5 {
-    /* Rectangle 5 */
-        position: absolute;
-        left: 476.26px;
-        right: -383.55px;
-        top: 457.49px;
-        bottom: -112.43px;
-  }
-
-  .rec4 {
-    /* Rectangle 4 */
-        position: absolute;
-        left: 168.54px;
-        right: -75.83px;
-        top: 366.68px;
-        bottom: -21.62px;
-  }
-
-  .rec12 {
-    /* Rectangle 12 */
-        position: absolute;
-        left: -189.52px;
-        right: 282.22px;
-        top: 466.31px;
-        bottom: -121.25px;
-  }
-
-  .rec11 {
-    /* Rectangle 11 */
-        position: absolute;
-        left: -203.01px;
-        right: 295.72px;
-        top: 63.63px;
-        bottom: 281.43px;
-  }
-
-  .rec10 {
-    /* Rectangle 10 */
-        position: absolute;
-        left: 1.96px;
-        right: 90.74px;
-        top: -70.77px;
-        bottom: 415.83px;
-  }
-
-  
 @media (min-width: 768px) {
     .covers-section {
         max-width: 768px;
@@ -126,97 +55,21 @@
         background-size: 768px 960px;
     }
 
-    .covers-container {
-        height: 960px;
-        left: -344px;
-    }
-    
-    .covers-item img {
-        width: 544px;
-    }
-    .covers-item {
-        width: 544px;
+    .marquee__line {
+        flex-shrink: 0;
+        min-width: 544px;
         height: 314px;
     }
-    .rec9 {
-        /* Rectangle 9 */
-        left: 32.74px;
-        right: 863.26px;
-        top: 526.89px;
-        bottom: 119.11px;
+    .marquee__line img {
+        height: 314px;
     }
 
-    .rec7 {
-        /* Rectangle 7 */
-        left: 872.02px;
-        right: 23.98px;
-        top: 19.67px;
-        bottom: 626.33px;
+    .covers-container {
+        height: 960px;
     }
-
-    .rec8 {
-        /* Rectangle 8 */
-        left: 1016.74px;
-        right: -120.74px;
-        top: 444.89px;
-        bottom: 201.11px;
-    }
-
-    .rec6 {
-        /* Rectangle 6 */
-        left: 1345.74px;
-        right: -449.74px;
-        top: -225.11px;
-        bottom: 871.11px;
-    }
-
-    .rec5 {
-        /*/* Rectangle 5 */
-        left: 1207.74px;
-        right: -311.74px;
-        top: 870.89px;
-        bottom: -224.89px;
-    }
-
-    .rec4 {
-        /* Rectangle 4 */
-        left: 614.74px;
-        right: 281.26px;
-        top: 695.89px;
-        bottom: -49.89px;
-    }
-
-    .rec12 {
-        /* Rectangle 12 */
-        left: -75.26px;
-        right: 971.26px;
-        top: 887.89px;
-        bottom: -241.89px;
-    }
-
-    .rec11 {
-        /* Rectangle 11 */
-        left: -101.26px;
-        right: 997.26px;
-        top: 111.89px;
-        bottom: 534.11px;
-    }
-
-    .rec10 {
-        /* Rectangle 10 */
-        left: 293.74px;
-        right: 602.26px;
-        top: -147.11px;
-        bottom: 793.11px;
-    }
-
-    .rec1 {
-        /* Rectangle 1 */
-        left: 461.02px;
-        right: 434.98px;
-        top: 278.67px;
-        bottom: 367.33px;
-    }
+          .marquee__inner {
+              margin-bottom: 50px;
+          }
 
 }
 
@@ -231,3 +84,12 @@
     }
 }
 
+@keyframes marqueeLine {
+    from {
+        transform: translateX(-20%);
+    }
+
+    to {
+        transform: translateX(-180%);
+    }
+}
