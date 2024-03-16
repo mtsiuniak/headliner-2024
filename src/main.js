@@ -17,3 +17,23 @@ function heroBackgroundImage() {
     }
 heroBackgroundImage();
 //  /hero background-image 
+// header
+
+
+const menuBox = document.querySelector(`.menu-box`);
+const buttonOpenMenu = document.querySelector(`.button-menu`);
+const buttonCloseMenu = document.querySelector(`.button-mob-menu`);
+
+buttonOpenMenu.addEventListener("click", function(){
+    menuBox.classList.toggle("visually-hidden");
+}
+)
+buttonCloseMenu.addEventListener("click", function(){
+    menuBox.classList.toggle("visually-hidden");
+}
+)
+ const menuUnder = document.querySelector(`.menu-under`)
+ const buttonMenuUnder = document.querySelector(`.menu-tablet-deck`)
+ buttonMenuUnder.addEventListener("click", function(){
+menuUnder.classList.toggle("visually-hidden")
+ })
