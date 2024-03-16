@@ -141,33 +141,30 @@ stroke: rgb(255, 255, 255);
 }
 
 @media screen and (min-width: 1440px) {
-    .container {
-        width: 1376px;
-    }
+
 
 .benefits-box {
 display: flex;
-    
-    flex-direction: column;
-    
-    /* align-items: center; */
-}
-.benefits-title-and-list {
-    display: flex;
+flex-direction: row;
+    flex-wrap: wrap;
+
     justify-content: space-between;
-   
-    /* flex-direction: column; */
+ 
 }
-.benefits-order-btn {
+.benefits-list-and-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
    
-    
+    flex-direction: column;
 }
+
 .benefits-box-btn{
 display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 100px;
+    justify-content:flex-start;
+  
 }
 
 }
