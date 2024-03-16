@@ -6,14 +6,14 @@ import 'swiper/css';
 const backgroundImageHero = document.querySelector('#hero-section');
 function heroBackgroundImage() {
     
-    const backgrounds = ['red', 'pink', 'blue', 'green', 'grey', 'orange'];
+    const backgrounds = ['red', 'pink', 'blue', 'green'];
             
             setInterval(function changeBackground() {
                 backgroundImageHero.className = '';
                 const randomIndex = Math.floor(Math.random() * backgrounds.length);
                 const randomClass = backgrounds[randomIndex];
                 backgroundImageHero.classList.add(randomClass);
-            }, 2000)   
+            }, 4000)   
     }
 heroBackgroundImage();
 //  /hero background-image 
