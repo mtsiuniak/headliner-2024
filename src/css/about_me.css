@@ -1,1 +1,151 @@
-/* css */
+.about-section {
+  padding-top: 64px;
+  padding-bottom: 32px;
+}
+
+/* General info mobile*/
+
+.about-general-info-text {
+  width: 343px;
+  height: 500px;
+  padding: 32px;
+  margin-bottom: 16px;
+  border-radius: 24px;
+  background: rgb(36, 37, 39);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.first-word {
+  color: rgb(237, 59, 68);
+}
+
+.second-word {
+  color: rgba(250, 250, 250, 0.4);
+}
+
+.about-general-info {
+  margin-bottom: 32px;
+}
+
+.about-general-info-img {
+}
+
+/* Detail info mobile */
+
+.about-detail-info-list {
+  margin-bottom: 32px;
+}
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.accordion-container .ac {
+  padding-bottom: 32px;
+  margin-top: 0;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+}
+.accordion-container .ac .ac-trigger {
+  height: 36px;
+  font: normal;
+  padding: 0px;
+  color: rgba(250, 250, 250, 0.4);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.accordion-container .ac .ac-trigger::after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0;
+  content: url(../img/arrow-down.svg);
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.accordion-container .ac.is-active > .ac-header .ac-trigger::after {
+  content: url(../img/arrow-up.svg);
+}
+
+.accordion-container .ac .ac-panel .ac-text {
+  margin-top: 12px;
+  max-width: 343px;
+  padding: 0;
+  color: rgb(250, 250, 250);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.about-me-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+.about-role-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.about-role-item {
+  max-width: 284px;
+}
+.about-education-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+/* Skills mobile*/
+.about-skills-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+}
+
+.about-skills-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  color: rgb(250, 250, 250);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+.swiper .swiper-slide:hover,
+.swiper .swiper-slide:focus {
+  background-color: rgb(237, 59, 68);
+  border: none;
+}
+
+.swiper {
+  width: 260px;
+  margin-left: 0 !important;
+}
+.swiper-button-next {
+  --swiper-navigation-sides-offset: 0px;
+}
