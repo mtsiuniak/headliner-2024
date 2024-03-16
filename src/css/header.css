@@ -36,14 +36,27 @@
   height: 100vh;
   top: 0;
   position: fixed;
-  background-color: #1c1d20;
+  z-index: 1;
   padding: 32px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
 }
-
+.image-mob-menu{
+  background-image: url('../img/header/mob-background1x.png');
+  background-repeat: no-repeat; 
+  background-position: center;
+  background-size: 412px 812px;
+  max-width: 375px;
+}
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .image-mob-menu {
+    background-image: url('../img/header/mob-background2x.png');
+  }
+}
 .button-mob-menu {
   display: flex;
   justify-content: right;
@@ -134,5 +147,7 @@
 @media screen and (min-width: 1440px) {
   .box-container {
     max-width: 1440px;
+    left: 50%;
+    transform: translateX(-50%)
   }
 }
