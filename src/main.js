@@ -16,4 +16,12 @@ function heroBackgroundImage() {
             }, 4000)   
     }
 heroBackgroundImage();
-//  /hero background-image 
+//  /hero background-image
+
+// about me
+const accordion = new Accordion('.accordion-container', {
+  showMultiple: true,
+});
+accordion.open(0);
+
+// /about me
