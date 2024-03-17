@@ -6,14 +6,20 @@
             <h2 class="footer-title">Let’s <span class="accent-color">work</span></h2>
             <h2 class="footer-title">together</h2>
         </div>
-        <form  class="footer-form succes-email failed">
+        <form  class="footer-form">
             <input 
             class="form-item" 
             type="email" 
             name="email" 
             placeholder="clients@gmail.com"
-            pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})">
-            <input class="form-item" type="text" name="comments" placeholder="comments">
+            
+            pattern="(^[^\s@]+@[^\s@]+\.[^\s@]+$)"
+           
+            autocomplete="off"
+            required>
+            <input class="form-item" type="text" name="comments" placeholder="comments"
+            autocomplete="off"
+            required>
             <button type="submit" class="btn-submit">Send</button>
         </form>
         <ul>

@@ -51,25 +51,37 @@ footer {
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -2%;
+
+  text-overflow: ellipsis;
+  /* width: 100%; */
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
 }
-.form-item:hover {
+.footer-form.success-email .form-item[name='email'] {
   border-bottom: 1px solid #3cbc81;
 }
 
-.succes-email::after {
-  content: 'Succes!';
+.success-email::after {
+  content: 'Success!';
   position: absolute;
   top: 50px;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%);
   color: rgb(60, 188, 129);
   font-size: 14px;
   line-height: 18px;
 }
-.failed::after {
+
+.footer-form.failed-email .form-item[name='email'] {
+  border-bottom: 1px solid rgb(231, 74, 59);
+}
+
+.failed-email::after {
   content: 'Invalid email, try again';
   position: absolute;
-  top: 116px;
-  left: 0;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%);
   color: rgb(231, 74, 59);
   font-family: Inter Tight;
   font-size: 14px;
@@ -88,6 +100,7 @@ footer {
   letter-spacing: -2%;
   text-align: left;
 }
+
 .btn-submit {
   width: 100px;
   height: 100px;
