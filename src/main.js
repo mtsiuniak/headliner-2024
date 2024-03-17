@@ -18,8 +18,6 @@ function heroBackgroundImage() {
 heroBackgroundImage();
 //  /hero background-image 
 // header
-
-
 const menuBox = document.querySelector(`.menu-box`);
 const buttonOpenMenu = document.querySelector(`.button-menu`);
 const buttonCloseMenu = document.querySelector(`.button-mob-menu`);
@@ -34,12 +32,27 @@ buttonCloseMenu.addEventListener("click", function(){
 )
  const menuUnder = document.querySelector(`.menu-under`)
  const buttonMenuUnder = document.querySelector(`.menu-tablet-deck`)
+ 
  buttonMenuUnder.addEventListener("click", function(){
 menuUnder.classList.toggle("visually-hidden");
+
  })
 
-
-//  Reviews
+ document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('anchor-header-menu') || event.target.classList.contains('order-btn-menu-mob')) {
+    menuBox.classList.add('visually-hidden');
+  }
+});
+document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('anchor-menu')) {
+    event.preventDefault();
+    const scrollId = event.target.getAttribute('href').substring(1);
+    const scrollSection = document.getElementById(scrollId);
+    scrollSection.scrollIntoView({ behavior: 'smooth'});
+    menuUnder.classList.toggle('visually-hidden');
+  }
+});
+// 
 
 
 const URL = 'https://portfolio-js.b.goit.study/api/reviews';
