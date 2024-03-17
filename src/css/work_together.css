@@ -2,6 +2,13 @@
 footer {
   padding: 32px 0;
   position: relative;
+  background: url('../img/work_together/bkgMobile.png') no-repeat right;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  footer {
+    background: url('../img/work_together/bkgMobile@2x.png') no-repeat right;
+  }
 }
 
 .title-box {
@@ -185,6 +192,13 @@ footer ul {
   footer {
     padding-top: 85px;
     padding-bottom: 169px;
+    background: url('../img/work_together/bkgTablet.png') no-repeat right;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    footer {
+      background: url('../img/work_together/bkgTablet@2x.png') no-repeat right;
+    }
   }
   .title-box {
     gap: 7px 20px;
@@ -216,19 +230,49 @@ footer ul {
   .footer-link {
     padding: 18px 32px;
   }
-}
 
-.success-email::after {
-  top: 100px;
-  left: 30px;
-}
+  .success-email::after {
+    top: 100px;
+    left: 30px;
+  }
 
-.failed-email::after {
-  top: 100px;
-  left: 70px;
+  .failed-email::after {
+    top: 100px;
+    left: 70px;
+  }
+
+  .modal {
+    max-width: 500px;
+    width: 495px;
+    padding: 64px 56px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  footer {
+    padding: 85px 196px 169px;
+    background: url('../img/work_together/bkgDesktop.png') no-repeat right;
+  }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    footer {
+      background: url('../img/work_together/bkgDesktop@2x.png') no-repeat right;
+    }
+  }
+
+  .title-box {
+    max-width: 472px;
+  }
+  .footer-form {
+    justify-content: start;
+    gap: 32px;
+  }
+  .form-item {
+    width: 390px;
+  }
+
+  .btn-submit {
+    margin-left: 54px;
+  }
   .success-email::after {
     top: 100px;
     left: 30px;
