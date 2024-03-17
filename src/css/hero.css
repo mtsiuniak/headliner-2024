@@ -28,6 +28,7 @@
     letter-spacing: -0.02em;
     color: #fafafa;
     cursor: pointer;
+    transform: color 250ms linear;
  }
 
  .hero-item:hover,
@@ -52,6 +53,7 @@
     padding: 10px 12px;
     width: 37px;
     height: 37px;
+    transform: border 250ms linear;
 }
 
 .hero-button-link:hover,
