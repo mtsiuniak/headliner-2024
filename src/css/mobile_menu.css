@@ -11,18 +11,19 @@
   justify-content: space-between;
   text-align: center;
 }
+
 .image-mob-menu{
-  background-image: url('../img/header/mob-background1x.png');
+  background-image: url(../img/header/mob-background1x.png);
   background-repeat: no-repeat; 
   background-position: center;
-  background-size: 412px 812px;
-  max-width: 375px;
+  background-size: cover;
+
 }
 @media (min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .image-mob-menu {
-    background-image: url('../img/header/mob-background2x.png');
+    background-image: url(../img/header/mob-background2x.png);
   }
 }
 .button-mob-menu {
@@ -32,7 +33,7 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms linear;
 }
 
 .mob-list-item {
@@ -40,20 +41,20 @@
   justify-content: center;
   margin-bottom: 12px;
 }
+
 .anchor-header-menu {       
   font-weight: 500;
   line-height: 19px; 
   letter-spacing: -0.02em;
+  transition: color 250ms linear;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
-.anchor-header-menu::after{
-  display: block;
-  content: '';
-  left: 0;
-  bottom: -1px;
-  height: 1px;
-  width: 100%;
-  background-color: #fafafa;
+.anchor-header-menu:hover,
+.anchor-header-menu:focus{
+  color: #e0373f;
 }
+
 .order-btn-menu-mob {
   background-color: #ed3b44;
   border-radius: 60px;
@@ -66,7 +67,7 @@
   letter-spacing: -0.02em;
   color: #fafafa;
   align-items: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms linear;
 }
 .order-btn-menu-mob:hover,
 .order-btn-menu-mob:focus {

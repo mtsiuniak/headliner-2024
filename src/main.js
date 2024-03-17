@@ -35,7 +35,7 @@ buttonCloseMenu.addEventListener("click", function(){
  const menuUnder = document.querySelector(`.menu-under`)
  const buttonMenuUnder = document.querySelector(`.menu-tablet-deck`)
  buttonMenuUnder.addEventListener("click", function(){
-menuUnder.classList.toggle("visually-hidden")
+menuUnder.classList.toggle("visually-hidden");
  })
 
 
