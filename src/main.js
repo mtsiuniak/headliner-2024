@@ -54,6 +54,34 @@ fetch(URL)
   })
   .then(data => {
     list.innerHTML = renderReviews(data);
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      updateOnWindowResize: true,
+      slidesPerView: 1,
+      enabled: true,
+      swipeHandler: '.reviews-list-item',
+      speed: 300,
+  
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 1,
+          spaceBetween: 16,
+        },
+  
+        1440: {
+          slidesPerView: 4,
+          slidesPerGroup: 1,
+          spaceBetween: 18,
+        },
+      },
+  
+      navigation: {
+        prevEl: '.reviews-arrow-left',
+        nextEl: '.reviews-arrow-right',
+        preventClicks: false,
+      },
+    });
   })
   .catch(error => console.log(error));
 
