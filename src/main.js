@@ -76,3 +76,7 @@ function renderReviews(review) {
     .join('');
 }
 
+const accordion = new Accordion('.accordion-container', {
+  showMultiple: true,
+});
+
