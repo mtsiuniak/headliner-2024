@@ -1,2 +1,160 @@
-<!-- html код для секції about me -->
-<p>about me</p>
+<section class="about-section" id="about-me">
+  <div class="container">
+    <!-- General info -->
+    <h2 class="about-title visually-hidden">About me section</h2>
+    <div class="about-general-info">
+      <p class="about-general-info-text">
+        I work with people all over the world to create impressive and
+        <span class="first-word">functional</span>
+        <span class="second-word">websites</span> that reflect each client's
+        unique personality.
+      </p>
+      <img
+        class="about-general-info-img"
+        srcset="
+          ../img/about_me/aboutme_mobile.jpg      343w,
+          ../img/about_me/aboutme_mobile@2x.jpg   686w,
+          ../img/about_me/aboutme_tablet.jpg      704w,
+          ../img/about_me/aboutme_tablet@2x.jpg  1408w,
+          ../img/about_me/aboutme_desktop.jpg     680w,
+          ../img/about_me/aboutme_desktop@2x.jpg 1360w
+        "
+        sizes="(min-width: 1440px) 680px, (min-width: 768px) 704px, (max-width: 767px) 343px"
+        src="../img/about_me/aboutme_mobile.png"
+        alt="My photo"
+      />
+    </div>
+
+    <!-- Detail info -->
+    <div>
+      <ul class="about-detail-info-list accordion-container" id="accordion1">
+        <li class="about-detail-info-item ac">
+          <h3 class="about-detail-info-title ac-header">
+            <button
+              class="about-detail-info-btn ac-trigger"
+              type="button"
+              width="36"
+              height="36"
+              aria-label="accordion button"
+            >
+              about me
+            </button>
+          </h3>
+          <div class="ac-panel">
+            <ul class="about-me-list ac-text">
+              <li class="about-me-item">
+                <p class="about-me-text">
+                  I am Lloyd Jefferson, a talented programmer with extensive
+                  expertise in software development. I have an understanding of
+                  different programming languages and technologies, always ready
+                  to improve my skills. I always follow the latest trends and
+                  look for unconventional, creative solutions to problems. I
+                  have a high level of analytical skills and am able to
+                  effectively solve even the most difficult tasks encountered on
+                  the way.
+                </p>
+              </li>
+              <li class="about-me-item">
+                <p class="about-me-text">
+                  Able to work both independently and in a team. I can
+                  effectively cooperate with colleagues, exchanging ideas and
+                  finding optimal solutions. Professional maturity allows you to
+                  calmly cope with challenges and stressful situations, while
+                  maintaining a high quality of work. <br />I am always looking
+                  for opportunities for self-improvement. I actively study new
+                  technologies and practices to stay abreast of the latest
+                  innovations. I have a strong understanding of various
+                  programming languages, frameworks and architectural concepts
+                  that allow me to create efficient and scalable software.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="about-detail-info-item ac">
+          <h3 class="about-detail-info-title ac-header">
+            <button class="about-detail-info-btn ac-trigger" type="button">
+              role
+            </button>
+          </h3>
+          <div class="ac-panel">
+            <ul class="about-role-list ac-text">
+              <li class="about-role-item">
+                <p class="about-role-text">Frontend development</p>
+              </li>
+              <li class="about-role-item">
+                <p class="about-role-text">HeadlessCMS,Wordpress</p>
+              </li>
+              <li class="about-role-item">
+                <p class="about-role-text">Blender(enjoy)</p>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="about-detail-info-item ac">
+          <h3 class="about-detail-info-title ac-header">
+            <button class="about-detail-info-btn ac-trigger" type="button">
+              education
+            </button>
+          </h3>
+          <div class="ac-panel">
+            <ul class="about-education-list ac-text">
+              <li class="about-education-item">
+                <p class="about-education-text">
+                  2018 - 2019 / Frontend Development Diploma, GoIT IT School,
+                  New York
+                </p>
+              </li>
+              <li class="about-education-item">
+                <p class="about-education-text">
+                  2019 - 2020 / Advanced Web Development Certificate, GoIT IT
+                  School, New York
+                </p>
+              </li>
+              <li class="about-education-item">
+                <p class="about-education-text">
+                  2020 - 2022 / Advanced Blender Animation Techniques, Udemy
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="about-skills-slider slider-container" id="slidertop1">
+      <div class="about-skills-container swiper swiper-container" id="swiper1">
+        <ul class="about-skills-list swiper-wrapper">
+          <li class="about-skills-item swiper-slide">
+            <p class="about-skills-title">HTML/CSS</p>
+          </li>
+          <li class="about-skills-item swiper-slide">
+            <p class="about-skills-title">JavaScript</p>
+          </li>
+          <li class="about-skills-item swiper-slide">
+            <p class="about-skills-title">React</p>
+          </li>
+          <li class="about-skills-item swiper-slide">
+            <p class="about-skills-title">Node.js</p>
+          </li>
+          <li class="about-skills-item swiper-slide">
+            <p class="about-skills-title">React Native</p>
+          </li>
+          <li class="about-skills-item swiper-slide">
+            <p class="about-skills-title">Soft skills</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="slider-top">
+        <div class="slider-buttons">
+          <button class="about-skills-button swiper-button-next" type="button">
+            <svg class="slider-button-arrow" aria-label="Slider button arrow">
+              <use href="../img/icon.svg#icon-arrow-right-dark"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

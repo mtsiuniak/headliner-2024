@@ -168,3 +168,40 @@ emailInput.addEventListener('blur', () => {
 });
 
 //  /work_together
+
+
+// about-me
+const accordionAboutMe = new Accordion('#accordion1', {
+  showMultiple: true,
+});
+accordionAboutMe.open(0);
+
+new Swiper('#swiper1', {
+  centeredSlides: false,
+  grabCursor: true,
+  loop: true,
+  keyboard: {
+    enabled: true,
+  },
+  mousewheel: true,
+  touch: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+  },
+  slidesPerView: 2,
+  spaceBetween: 0,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 2,
+    },
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 1440px
+    1440: {
+      slidesPerView: 6,
+    }
+}
+});
