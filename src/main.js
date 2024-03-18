@@ -73,9 +73,69 @@ fetch(URL)
     return response.json();
   })
   .then(data => {
-    list.innerHTML = renderReviews(data);
-  })
-  .catch(error => console.log(error));
+
+    const markup = renderReviews(data);
+ 
+    list.insertAdjacentHTML('beforeend', markup);
+    const swiper = new Swiper('#swiper2', {
+   
+     on: {
+     slideChange: function () {
+       updateButtonsState();
+     },
+   },
+   
+       breakpoints: {
+         768: {
+           slidesPerView: 2,
+           slidesPerGroup: 1,
+           spaceBetween: 16,
+         },
+   
+         1440: {
+           slidesPerView: 4,
+           slidesPerGroup: 1,
+           spaceBetween: 18,
+         },
+       },
+
+    navigation: {
+     nextEl: '.swiper-button-next',
+     prevEl: '.swiper-button-prev',
+      },
+     
+    });
+     
+     
+    const myPrevButton = document.querySelector('.my-swiper-button-prev');
+     const myNextButton = document.querySelector('.my-swiper-button-next');
+     
+ updateButtonsState();
+ 
+ function updateButtonsState() {
+   if (swiper.isBeginning) {
+     myPrevButton.disabled = true;
+   } else {
+     myPrevButton.disabled = false;
+   }
+
+   if (swiper.isEnd) {
+     myNextButton.disabled = true;
+   } else {
+     myNextButton.disabled = false;
+   }
+ }
+ myPrevButton.addEventListener('click', () => {
+   swiper.slidePrev();
+ });
+ 
+ myNextButton.addEventListener('click', () => {
+   swiper.slideNext();
+ });
+   })
+   .catch(error => console.log(error));
+
+   
 
 function renderReviews(review) {
   return review
