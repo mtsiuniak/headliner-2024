@@ -28,6 +28,7 @@
     letter-spacing: -0.02em;
     color: #fafafa;
     cursor: pointer;
+    transform: color 250ms linear;
  }
 
  .hero-item:hover,
@@ -52,6 +53,7 @@
     padding: 10px 12px;
     width: 37px;
     height: 37px;
+    transform: border 250ms linear;
 }
 
 .hero-button-link:hover,
@@ -127,7 +129,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 578px 894px;
-    max-width: 375px;
+    min-width: 375px;
     transition: background-image 1s linear;
 
     
@@ -145,13 +147,13 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
 @media screen and (min-width: 768px) {
     .red {
         background-size: cover;  
-        max-width: 768px;
+        min-width: 768px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     .red {
-        max-width: 1440px;
+        min-width: 1440px;
     }
 }
 
@@ -193,7 +195,7 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 578px 894px;
-    max-width: 375px;
+    min-width: 375px;
     transition: background-image 1s linear;
 }
 
