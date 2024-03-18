@@ -4,9 +4,8 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import axios from 'axios';
 import postRequestPortfolioApi from './js/postRequestPortfolioApi';
-import Swal from 'sweetalert2';
-// import iziToast from 'izitoast';
-// import 'izitoast/dist/css/iziToast.min.css';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.css';
 
 // hero background-image
 const backgroundImageHero = document.querySelector('#hero-section');
@@ -28,19 +27,40 @@ const menuBox = document.querySelector(`.menu-box`);
 const buttonOpenMenu = document.querySelector(`.button-menu`);
 const buttonCloseMenu = document.querySelector(`.button-mob-menu`);
 
-buttonOpenMenu.addEventListener('click', function () {
-  menuBox.classList.toggle('visually-hidden');
-});
-buttonCloseMenu.addEventListener('click', function () {
-  menuBox.classList.toggle('visually-hidden');
-});
-const menuUnder = document.querySelector(`.menu-under`);
-const buttonMenuUnder = document.querySelector(`.menu-tablet-deck`);
-buttonMenuUnder.addEventListener('click', function () {
-  menuUnder.classList.toggle('visually-hidden');
-});
 
-//  Reviews
+buttonOpenMenu.addEventListener("click", function(){
+    menuBox.classList.toggle("visually-hidden");
+}
+)
+buttonCloseMenu.addEventListener("click", function(){
+    menuBox.classList.toggle("visually-hidden");
+}
+)
+ const menuUnder = document.querySelector(`.menu-under`)
+ const buttonMenuUnder = document.querySelector(`.menu-tablet-deck`)
+ 
+ buttonMenuUnder.addEventListener("click", function(){
+menuUnder.classList.toggle("visually-hidden");
+
+ })
+
+
+
+ document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('anchor-header-menu') || event.target.classList.contains('order-btn-menu-mob')) {
+    menuBox.classList.add('visually-hidden');
+  }
+});
+document.addEventListener('click', function(event) {
+  if (event.target.classList.contains('anchor-menu')) {
+    event.preventDefault();
+    const scrollId = event.target.getAttribute('href').substring(1);
+    const scrollSection = document.getElementById(scrollId);
+    scrollSection.scrollIntoView({ behavior: 'smooth'});
+    menuUnder.classList.toggle('visually-hidden');
+  }
+});
+// 
 
 const URL = 'https://portfolio-js.b.goit.study/api/reviews';
 const list = document.querySelector('.reviews-list');
@@ -53,6 +73,7 @@ fetch(URL)
     return response.json();
   })
   .then(data => {
+
     const markup = renderReviews(data);
  
     list.insertAdjacentHTML('beforeend', markup);
@@ -114,6 +135,8 @@ fetch(URL)
    })
    .catch(error => console.log(error));
 
+   
+
 function renderReviews(review) {
   return review
     .map(({ _id, avatar_url, author, review }) => {
@@ -174,7 +197,15 @@ function handSubmit(event) {
         modalBack.addEventListener('click', closeModal);
       })
       .catch(er => {
-        console.log(er);
+        iziToast.error({
+          title: 'Oops!',
+          message: 'Something went wrong',
+          progressBar: false,
+          position: 'topCenter',
+          color: '#1c1d20',
+          messageColor: '#fafafa',
+          titleColor: '#fafafa',
+        });
       });
   }
 }
@@ -197,3 +228,40 @@ emailInput.addEventListener('blur', () => {
 });
 
 //  /work_together
+
+
+// about-me
+const accordionAboutMe = new Accordion('#accordion1', {
+  showMultiple: true,
+});
+accordionAboutMe.open(0);
+
+new Swiper('#swiper1', {
+  centeredSlides: false,
+  grabCursor: true,
+  loop: true,
+  keyboard: {
+    enabled: true,
+  },
+  mousewheel: true,
+  touch: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+  },
+  slidesPerView: 2,
+  spaceBetween: 0,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 2,
+    },
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 1440px
+    1440: {
+      slidesPerView: 6,
+    }
+}
+});

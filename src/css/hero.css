@@ -123,13 +123,13 @@
 /* retina-screen */
 
 
-/* background-red */
+/* red */
 .red {
     background-image: url('../img/hero/desktop/hero_red.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 578px 894px;
-    max-width: 375px;
+    min-width: 375px;
     transition: background-image 1s linear;
 
     
@@ -147,24 +147,24 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
 @media screen and (min-width: 768px) {
     .red {
         background-size: cover;  
-        max-width: 768px;
+        min-width: 768px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     .red {
-        max-width: 1440px;
+        min-width: 1440px;
     }
 }
 
    
-/* background-pink */
+/* pink */
 .pink {
     background-image: url('../img/hero/desktop/hero_pink.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 578px 894px;
-    max-width: 375px;
+    min-width: 375px;
     transition: background-image 1s linear;
 }
 
@@ -179,23 +179,23 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
 @media screen and (min-width: 768px) {
     .pink {
         background-size: cover;
-        max-width: 768px;
+        min-width: 768px;
 
     }
 }
 
 @media screen and (min-width: 1440px) {
     .pink {
-        max-width: 1440px;
+        min-width: 1440px;
     }
 }
-/* background-blue */
+/* blue */
 .blue {
     background-image: url('../img/hero/desktop/hero_blue.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 578px 894px;
-    max-width: 375px;
+    min-width: 375px;
     transition: background-image 1s linear;
 }
 
@@ -210,23 +210,23 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
 @media screen and (min-width: 768px) {
     .blue {
         background-size: cover;
-        max-width: 768px;
+        min-width: 768px;
 
     }
 }
 @media screen and (min-width: 1440px) {
     .blue {
-        max-width: 1440px;
+        min-width: 1440px;
     }
 }
-/* background-green */
+/* green */
 .green {
     background-image: url('../img/hero/desktop/hero_green.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 578px 894px;
     transition: background-image 1s linear;
-    max-width: 375px;
+    min-width: 375px;
 }
 
 @media screen and (min-resolution: 192dpi) and (max-width: 767px),
@@ -240,13 +240,13 @@ screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
 @media screen and (min-width: 768px) {
     .green {
         background-size: cover;
-        max-width: 768px;
+        min-width: 768px;
 
     }
 }
 @media screen and (min-width: 1440px) {
     .green {
-        max-width: 1440px;
+        min-width: 1440px;
     }
 }
 /*  /hero */
