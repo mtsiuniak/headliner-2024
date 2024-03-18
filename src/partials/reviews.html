@@ -4,32 +4,20 @@
 <section class="reviews-section" id="reviews">
   <div class="reviews-container">
     <h2 class="reviews-title">Reviews</h2>
-    <ul class="reviews-list"> </ul>
-  </div>
-  <div class="slider">
-    <button
-      class="slider-button button-prev"
-      type="button"
-      width="32"
-        height="32"
-      aria-label="Previous"
-    >    
-    <svg class="slider-button button-prev btn-icon" >
-      <use href="/src/img/icon.svg#icon-arrow">
-      </use>
-    </svg>
-    </button>
-    <button
-      class="slider-button button-next"
-      type="button"
-      width="32"
-        height="32"
-      aria-label="Next"
-    >
-    <svg class="slider-button button-next btn-icon">
-      <use href="/src/img/icon.svg#icon-arrow">
-      </use>
-    </svg>
-    </button>
+    <div class="swiper">
+      <ul class="swiper-wraper reviews-list" id="swiper2"> </ul>
+      <div class="my-swiper-buttons">
+        <button class="my-swiper-button-prev">
+          <svg class="reviews-arrow-left" width="24" height="24">
+            <use href="./img/icon.svg#icon-arrow-left-dark"></use>
+          </svg>
+        </button>
+        <button class="my-swiper-button-next">
+          <svg class="reviews-arrow-right" width="24" height="24">
+            <use href="./img/icon.svg#icon-arrow-right-white"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
