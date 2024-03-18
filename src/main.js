@@ -4,9 +4,8 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import axios from 'axios';
 import postRequestPortfolioApi from './js/postRequestPortfolioApi';
-import Swal from 'sweetalert2';
-// import iziToast from 'izitoast';
-// import 'izitoast/dist/css/iziToast.min.css';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.css';
 
 // hero background-image
 const backgroundImageHero = document.querySelector('#hero-section');
@@ -75,34 +74,6 @@ fetch(URL)
   })
   .then(data => {
     list.innerHTML = renderReviews(data);
-    const swiper = new Swiper('.swiper', {
-      direction: 'horizontal',
-      updateOnWindowResize: true,
-      slidesPerView: 1,
-      enabled: true,
-      swipeHandler: '.reviews-list-item',
-      speed: 300,
-  
-      breakpoints: {
-        768: {
-          slidesPerView: 2,
-          slidesPerGroup: 1,
-          spaceBetween: 16,
-        },
-  
-        1440: {
-          slidesPerView: 4,
-          slidesPerGroup: 1,
-          spaceBetween: 18,
-        },
-      },
-  
-      navigation: {
-        prevEl: '.reviews-arrow-left',
-        nextEl: '.reviews-arrow-right',
-        preventClicks: false,
-      },
-    });
   })
   .catch(error => console.log(error));
 
@@ -166,7 +137,15 @@ function handSubmit(event) {
         modalBack.addEventListener('click', closeModal);
       })
       .catch(er => {
-        console.log(er);
+        iziToast.error({
+          title: 'Oops!',
+          message: 'Something went wrong',
+          progressBar: false,
+          position: 'topCenter',
+          color: '#1c1d20',
+          messageColor: '#fafafa',
+          titleColor: '#fafafa',
+        });
       });
   }
 }
