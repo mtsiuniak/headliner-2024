@@ -60,7 +60,7 @@ document.addEventListener('click', function(event) {
     menuUnder.classList.toggle('visually-hidden');
   }
 });
-// 
+// Reviews
 
 const URL = 'https://portfolio-js.b.goit.study/api/reviews';
 const list = document.querySelector('.reviews-list');
@@ -75,12 +75,13 @@ fetch(URL)
   .then(data => {
 
     const markup = renderReviews(data);
+
+
     console.log(markup);
  
     list.insertAdjacentHTML('beforeend', markup);
-    const swiper3 = new Swiper('#swiper3', {
 
-      modules: [Navigation, Keyboard, Mousewheel],
+    const swiper3 = new Swiper('#swiper3', {
       direction: 'horizontal',
       speed: 300,
       slidesPerView: 1,
@@ -108,14 +109,7 @@ fetch(URL)
 
     navigation: {
      nextEl: '.my-swiper-button-next',
-     prevEl: 'my-wiper-button-prev',
-      },
-      keyboard: {
-        enabled: true,
-      },
-      mousewheel: {
-        enabled: true,
-        forceToAxis: true,
+     prevEl: 'my-swiper-button-prev',
       },
     });
      
@@ -146,24 +140,16 @@ fetch(URL)
    swiper3.slideNext();
  });
    })
-   .catch(error => console.log(error));
+   .catch((error) => {
+    iziToast.error({
+      title: 'Error',
+      message: 'Sorry, reviews not found.',
+      position: 'center',
 
-   const errorMsg = {
-    messageSize: '16',
-    messageLineHeight: '24',
-    backgroundColor: 'rgb(0,255,0)',
-    messageColor: 'rgb(255, 255, 255)',
-    titleColor: 'rgb(255, 255, 255)',
-    position: 'center',
-    close: 'rgb(255, 255, 255)',
-    maxWidth: '432px',
-  };
-
-  function messageError(error) {
-    errorMsg.message = `${error}reviews not found!`;
-    iziToast.error(errorMsg);
-  }
-
+    });
+    
+  })
+   
 function renderReviews(review) {
   return review
     .map(({ _id, avatar_url, author, review }) => {
