@@ -60,7 +60,7 @@ document.addEventListener('click', function(event) {
     menuUnder.classList.toggle('visually-hidden');
   }
 });
-// 
+// Reviews
 
 const URL = 'https://portfolio-js.b.goit.study/api/reviews';
 const list = document.querySelector('.reviews-list');
@@ -73,10 +73,83 @@ fetch(URL)
     return response.json();
   })
   .then(data => {
-    list.innerHTML = renderReviews(data);
-  })
-  .catch(error => console.log(error));
 
+    const markup = renderReviews(data);
+
+
+    console.log(markup);
+ 
+    list.insertAdjacentHTML('beforeend', markup);
+
+    const swiper3 = new Swiper('#swiper3', {
+      direction: 'horizontal',
+      speed: 300,
+      slidesPerView: 1,
+      spaceBetween: 16,
+
+     on: {
+     slideChange: function () {
+       updateButtonsState();
+     },
+   },
+   
+       breakpoints: {
+         768: {
+           slidesPerView: 2,
+           slidesPerGroup: 1,
+           spaceBetween: 16,
+         },
+   
+         1440: {
+           slidesPerView: 4,
+           slidesPerGroup: 1,
+           spaceBetween: 18,
+         },
+       },
+
+    navigation: {
+     nextEl: '.my-swiper-button-next',
+     prevEl: 'my-swiper-button-prev',
+      },
+    });
+     
+     
+    const myPrevButton = document.querySelector('.my-swiper-button-prev');
+     const myNextButton = document.querySelector('.my-swiper-button-next');
+     
+ updateButtonsState();
+ 
+ function updateButtonsState() {
+   if (swiper3.isBeginning) {
+     myPrevButton.disabled = true;
+   } else {
+     myPrevButton.disabled = false;
+   }
+
+   if (swiper3.isEnd) {
+     myNextButton.disabled = true;
+   } else {
+     myNextButton.disabled = false;
+   }
+ }
+ myPrevButton.addEventListener('click', () => {
+   swiper3.slidePrev();
+ });
+ 
+ myNextButton.addEventListener('click', () => {
+   swiper3.slideNext();
+ });
+   })
+   .catch((error) => {
+    iziToast.error({
+      title: 'Error',
+      message: 'Sorry, reviews not found.',
+      position: 'center',
+
+    });
+    
+  })
+   
 function renderReviews(review) {
   return review
     .map(({ _id, avatar_url, author, review }) => {
@@ -168,3 +241,120 @@ emailInput.addEventListener('blur', () => {
 });
 
 //  /work_together
+
+
+// about-me
+const accordionAboutMe = new Accordion('#accordion1', {
+  showMultiple: true,
+});
+accordionAboutMe.open(0);
+
+new Swiper('#swiper1', {
+  centeredSlides: false,
+  grabCursor: true,
+  loop: true,
+  keyboard: {
+    enabled: true,
+  },
+  mousewheel: true,
+  touch: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+  },
+  slidesPerView: 2,
+  spaceBetween: 0,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 2,
+    },
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 3,
+    },
+    // when window width is >= 1440px
+    1440: {
+      slidesPerView: 6,
+    }
+}
+});
+
+
+// FAQ
+const accordion2 = new Accordion('#accordion2', {
+  showMultiple: true,
+});
+
+
+// Projects======
+
+const swiper2 = new Swiper('#swiper2', {
+  // Optional parameters
+  direction: 'horizontal',
+  on: {
+    // Оновлення стану кнопок після перемикання слайдів
+    slideChange: function () {
+      updateButtonsState();
+    },
+  },
+
+    slidesPerView: 1,
+  freeMode: true,
+  swipeHandler: '.project-swiper-slide',
+  slidesPerGroup: 1,
+  //  spaceBetween: 50,
+ 
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+ breakpoints: {
+      768: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 16,
+      },
+
+      1440: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 18,
+      },
+    },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.projects-btn-prev',
+    prevEl: '.projects-btn-next',
+  },
+});
+
+const myPrevButton = document.querySelector('.projects-btn-prev');
+    const myNextButton = document.querySelector('.projects-btn-next');
+ 
+updateButtonsState();
+
+function updateButtonsState() {
+  // Деактивувати кнопку назад, якщо поточний слайд - перший
+  if (swiper2.isBeginning) {
+    myPrevButton.disabled = true;
+  } else {
+    myPrevButton.disabled = false;
+  }
+
+  // Деактивувати кнопку вперед, якщо поточний слайд - останній
+  if (swiper2.isEnd) {
+    myNextButton.disabled = true;
+  } else {
+    myNextButton.disabled = false;
+  }
+}
+// обробники подій для вашого кнопок
+myPrevButton.addEventListener('click', () => {
+  swiper2.slidePrev();
+});
+
+myNextButton.addEventListener('click', () => {
+  swiper2.slideNext();
+});
