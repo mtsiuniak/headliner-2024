@@ -293,3 +293,8 @@ new Swiper('#swiper1', {
 });
 
 
+// FAQ
+const accordion2 = new Accordion('#accordion2', {
+  showMultiple: true,
+});
+
