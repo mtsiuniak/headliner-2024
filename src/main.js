@@ -168,13 +168,3 @@ emailInput.addEventListener('blur', () => {
 });
 
 //  /work_together
-
-
-
-
-//  about_me
-const accordion = new Accordion('.accordion-container', {
-  showMultiple: true,
-});
-accordion.open(0);
-//  /about_me
