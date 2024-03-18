@@ -56,8 +56,10 @@
   background-color: transparent;
   border-bottom: 1px solid rgba(250, 250, 250, 0.2);
 }
-#accordion1 .ac .ac-trigger {
-  height: 36px;
+
+#accordion1 .ac .ac-header {
+  display: flex;
+  justify-content: space-between;
   padding: 0px;
   color: rgba(250, 250, 250, 0.4);
   font-family: inherit;
@@ -68,18 +70,40 @@
   text-align: left;
   text-transform: uppercase;
 }
-#accordion1 .ac .ac-trigger::after {
-  line-height: 0;
-  content: url(../img/icon.svg#icon-down);
-  border: 1px solid rgba(250, 250, 250, 0.2);
+
+.about-detail-info-title-text {
+  width: 284px;
+}
+#accordion1 .ac .ac-trigger {
+  background-color: transparent;
+  border: none;
   width: 36px;
   height: 36px;
-  right: 0;
+  border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 50%;
+  padding: 8px;
+}
+
+.about-accordion-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+}
+
+#accordion1 .ac .ac-trigger::after {
+  line-height: 0;
+  content: '';
+
+  right: 0;
 }
 
 #accordion1 .ac.is-active > .ac-header .ac-trigger::after {
-  content: url(../img/icon.svg#icon-up);
+  content: '';
+}
+#accordion1 .ac-trigger[aria-expanded='true'] .about-accordion-icon {
+  transform: rotate(180deg);
 }
 
 #accordion1 .ac .ac-panel .ac-text {
@@ -226,9 +250,15 @@ br {
   }
 
   #accordion1 .ac .ac-trigger {
+    width: 40px;
     height: 40px;
+    padding: 10px;
   }
 
+  .about-accordion-icon {
+    width: 20px;
+    height: 20px;
+  }
   #accordion1 .ac .ac-trigger::after {
     width: 40px;
     height: 40px;
@@ -312,15 +342,6 @@ br {
     display: flex;
     flex-direction: column;
     row-gap: 32px;
-  }
-
-  #accordion1 .ac .ac-trigger {
-    height: 40px;
-  }
-
-  #accordion1 .ac .ac-trigger::after {
-    width: 40px;
-    height: 40px;
   }
 
   #accordion1 .ac .ac-panel {
