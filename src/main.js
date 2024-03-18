@@ -75,6 +75,7 @@ fetch(URL)
   .then(data => {
 
     const markup = renderReviews(data);
+    console.log(markup);
  
     list.insertAdjacentHTML('beforeend', markup);
     const swiper3 = new Swiper('#swiper3', {
@@ -106,8 +107,8 @@ fetch(URL)
        },
 
     navigation: {
-     nextEl: '#swiper3.swiper-button-next',
-     prevEl: '#swiper3.swiper-button-prev',
+     nextEl: '.my-swiper-button-next',
+     prevEl: 'my-wiper-button-prev',
       },
       keyboard: {
         enabled: true,
