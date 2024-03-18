@@ -75,3 +75,4 @@ function renderReviews(review) {
     })
     .join('');
 }
+
