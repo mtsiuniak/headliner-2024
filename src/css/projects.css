@@ -214,9 +214,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-    .container {
-        width: 1376px;
-    }
+    
 
     .projects-section {
         padding-top: 82px;
