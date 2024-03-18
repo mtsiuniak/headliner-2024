@@ -81,15 +81,15 @@
   }
 }
 
-#swiper3.my-swiper-buttons {
+.my-swiper-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
 }
 
-#swiper3.my-swiper-button-prev,
-#swiper3.my-swiper-button-next {
+.my-swiper-button-prev,
+.my-swiper-button-next {
   display: flex;
   width: 52px;
   height: 52px;
@@ -135,8 +135,8 @@
     height: 32px;
   }
 
-  #swiper3.my-swiper-button-prev,
-  #swiper3.my-swiper-button-next {
+  .my-swiper-button-prev,
+  .my-swiper-button-next {
     width: 68px;
     height: 68px;
   }
