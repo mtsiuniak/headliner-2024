@@ -265,3 +265,77 @@ new Swiper('#swiper1', {
     }
 }
 });
+
+
+// Projects======
+
+const swiper2 = new Swiper('#swiper2', {
+  // Optional parameters
+  direction: 'horizontal',
+  on: {
+    // Оновлення стану кнопок після перемикання слайдів
+    slideChange: function () {
+      updateButtonsState();
+    },
+  },
+
+    slidesPerView: 1,
+  freeMode: true,
+  swipeHandler: '.project-swiper-slide',
+  slidesPerGroup: 1,
+  //  spaceBetween: 50,
+ 
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+ breakpoints: {
+      768: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 16,
+      },
+
+      1440: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 18,
+      },
+    },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.projects-btn-prev',
+    prevEl: '.projects-btn-next',
+  },
+});
+
+const myPrevButton = document.querySelector('.projects-btn-prev');
+    const myNextButton = document.querySelector('.projects-btn-next');
+ 
+updateButtonsState();
+
+function updateButtonsState() {
+  // Деактивувати кнопку назад, якщо поточний слайд - перший
+  if (swiper2.isBeginning) {
+    myPrevButton.disabled = true;
+  } else {
+    myPrevButton.disabled = false;
+  }
+
+  // Деактивувати кнопку вперед, якщо поточний слайд - останній
+  if (swiper2.isEnd) {
+    myNextButton.disabled = true;
+  } else {
+    myNextButton.disabled = false;
+  }
+}
+// обробники подій для вашого кнопок
+myPrevButton.addEventListener('click', () => {
+  swiper2.slidePrev();
+});
+
+myNextButton.addEventListener('click', () => {
+  swiper2.slideNext();
+});
