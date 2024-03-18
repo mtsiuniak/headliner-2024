@@ -22,7 +22,7 @@
     <script type="module" crossorigin src="/headliner-2024/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/headliner-2024/assets/vendor-c7e898a2.js">
     <link rel="stylesheet" href="/headliner-2024/assets/vendor-d962af35.css">
-    <link rel="stylesheet" href="/headliner-2024/assets/index-0ccf2f50.css">
+    <link rel="stylesheet" href="/headliner-2024/assets/index-78a8335e.css">
   </head>
 
   <body>
@@ -290,7 +290,7 @@
     <div class="benefits-list-and-btn">
       <ul class="benefits-list">
         <li class="benefits-card-item">
-          <a class="benefits-icon-accent" href="">
+          <a class="benefits-icon-accent">
             <svg class="benefits-icon-form" width="24" height="24">
               <use href="/headliner-2024/assets/icon-ab561872.svg#icon-user"></use>
             </svg>
@@ -304,7 +304,7 @@
           </div>
         </li>
         <li class="benefits-card-item">
-          <a class="benefits-icon-accent" href="">
+          <a class="benefits-icon-accent">
             <svg class="benefits-icon-form" width="24" height="24">
               <use href="/headliner-2024/assets/icon-ab561872.svg#icon-message-chat-circle"></use>
             </svg>
@@ -318,7 +318,7 @@
           </div>
         </li>
         <li class="benefits-card-item">
-          <a class="benefits-icon-accent" href="">
+          <a class="benefits-icon-accent">
             <svg class="benefits-icon-form" width="24" height="24">
               <use href="/headliner-2024/assets/icon-ab561872.svg#icon-brush"></use>
             </svg>
@@ -332,7 +332,7 @@
           </div>
         </li>
         <li class="benefits-card-item">
-          <a class="benefits-icon-accent" href="">
+          <a class="benefits-icon-accent">
             <svg class="benefits-icon-form" width="24" height="24">
               <use href="/headliner-2024/assets/icon-ab561872.svg#icon-hourglass"></use>
             </svg>
@@ -348,7 +348,11 @@
       </ul>
 
       <div class="benefits-box-btn">
-        <button class="benefits-order-btn" type="button">
+        <button
+          class="benefits-order-btn"
+          type="button"
+          onclick="window.location.href='#footer-id'"
+        >
           Order the project
         </button>
       </div>
@@ -359,120 +363,207 @@
       <section class="projects-section" id="projects-id">
   <div class="container">
     <h3 class="projects-title">Projects</h3>
-    <div class="projects-container">
-      <div class="projects-first-container">
-        <div class="projects-cirkle-container">
-          <ul class="projects-circle-list">
-            <li class="projects-circle-item">
-              <p class="projects-circle"></p>
-              #react
-            </li>
-            <li class="projects-circle-item">
-              <p class="projects-circle"></p>
-              #js
-            </li>
-            <li class="projects-circle-item">
-              <p class="projects-circle"></p>
-              #node js
-            </li>
-            <li class="projects-circle-item">
-              <p class="projects-circle"></p>
-              #git
-            </li>
-          </ul>
-        </div>
-
-        <h3 class="projects-text">
-          Programming Across Borders: Ideas, Technologies, Innovations
-        </h3>
-
-        <button
-          class="projects-btn"
-          onclick="window.open('https://mtsiuniak.github.io/headliner-2024/', 
+    <div id="swiper2" class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="projects-container">
+            <div class="projects-first-container">
+              <div class="projects-cirkle-container">
+                <ul class="projects-circle-list">
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #react
+                  </li>
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #js
+                  </li>
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #node js
+                  </li>
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #git
+                  </li>
+                </ul>
+              </div>
+              <h3 class="projects-text">
+                Programming Across Borders: Ideas, Technologies, Innovations
+              </h3>
+              <button
+                class="projects-btn"
+                onclick="window.open('https://mtsiuniak.github.io/headliner-2024/', 
             '_blank')"
-        >
-          See project
-        </button>
-      </div>
+              >
+                See project
+              </button>
+            </div>
+            <div class="projects-second-container">
+              <div class="projects-image">
+                <picture>
+                  <source
+                    media="(min-width:768px)"
+                    srcset="/headliner-2024/assets/project-tab-desk1-8fafb134.jpg 1x, /headliner-2024/assets/project-tab-desk1@2x-c5a8dc0f.jpg 2x"
+                    type="image/jpg"
+                  />
+                  <source
+                    media="(max-width:767px)"
+                    srcset="/headliner-2024/assets/project1mob-91651b2d.jpg 1x, /headliner-2024/assets/project1mob@2x-4ba464b8.jpg 2x"
+                    type="image/jpg"
+                  />
+                  <img
+                    src="/headliner-2024/assets/project1mob-91651b2d.jpg"
+                    alt="Image 1"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="projects-container">
+            <div class="projects-first-container">
+              <div class="projects-cirkle-container">
+                <ul class="projects-circle-list">
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #react
+                  </li>
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #js
+                  </li>
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #node js
+                  </li>
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #git
+                  </li>
+                </ul>
+              </div>
+              <h3 class="projects-text">
+                Programming Across Borders: Ideas, Technologies, Innovations
+              </h3>
+              <button
+                class="projects-btn"
+                onclick="window.open('https://mtsiuniak.github.io/headliner-2024/', 
+            '_blank')"
+              >
+                See project
+              </button>
+            </div>
+            <div class="projects-second-container">
+              <div class="projects-image">
+                <picture>
+                  <source
+                    media="(min-width:768px)"
+                    srcset="
 
-      <div class="projects-swiper-container">
-        <div class="projects-swiper-wrapper">
-          <div class="projects-swiper-slide">
-            <picture>
-              <source
-                media="(min-width:768px)"
-                srcset="/headliner-2024/assets/project-tab-desk1-8fafb134.jpg 1x, /headliner-2024/assets/project-tab-desk1@2x-c5a8dc0f.jpg 2x"
-                type="image/jpg"
-              />
-              <source
-                media="(max-width:767px)"
-                srcset="/headliner-2024/assets/project1mob-91651b2d.jpg 1x, /headliner-2024/assets/project1mob@2x-4ba464b8.jpg 2x"
-                type="image/jpg"
-              />
-              <img
-                src="/headliner-2024/assets/project1mob-91651b2d.jpg"
-                alt="Image 1"
-                loading="lazy"
-              />
-            </picture>
+Olga, [18.03.2024 18:59]
+./img/projects/desktop&tablet/project-tab-desk2.jpg    1x,
+                      ./img/projects/desktop&tablet/project-tab-desk2@2x.jpg 2x
+                    "
+                    type="image/jpg"
+                  />
+                  <source
+                    media="(max-width:767px)"
+                    srcset="/headliner-2024/assets/project2mob-c4782cc2.jpg 1x, /headliner-2024/assets/project2mob@2x-69a219ab.jpg 2x"
+                    type="image/jpg"
+                  />
+                  <img
+                    src="/headliner-2024/assets/project2mob-c4782cc2.jpg"
+                    alt="Image 2"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </div>
           </div>
-          <div class="projects-swiper-slide">
-            <picture>
-              <source
-                media="(min-width:768px)"
-                srcset="/headliner-2024/assets/project-tab-desk2-55a73814.jpg 1x, /headliner-2024/assets/project-tab-desk2@2x-fba0e39a.jpg 2x"
-                type="image/jpg"
-              />
-              <source
-                media="(max-width:767px)"
-                srcset="/headliner-2024/assets/project2mob-c4782cc2.jpg 1x, /headliner-2024/assets/project2mob@2x-69a219ab.jpg 2x"
-                type="image/jpg"
-              />
-              <img
-                src="/headliner-2024/assets/project2mob-c4782cc2.jpg"
-                alt="Image 2"
-                loading="lazy"
-              />
-            </picture>
-          </div>
-          <div class="projects-swiper-slide">
-            <picture>
-              <source
-                media="(min-width:768px)"
-                srcset="/headliner-2024/assets/project-tab-desk3-1689f0fe.jpg 1x, /headliner-2024/assets/project-tab-desk3@2x-bbf727ed.jpg 2x"
-                type="image/jpg"
-              />
-              <source
-                media="(max-width:767px)"
-                srcset="/headliner-2024/assets/project3mob-b07e478c.jpg 1x, /headliner-2024/assets/project3mob@2x-83464b98.jpg 2x"
-                type="image/jpg"
-              />
-              <img
-                src="/headliner-2024/assets/project3mob-b07e478c.jpg"
-                alt="Image 1"
-                loading="lazy"
-              />
-            </picture>
+        </div>
+        <div class="swiper-slide">
+          <div class="projects-container">
+            <div class="projects-first-container">
+              <div class="projects-cirkle-container">
+                <ul class="projects-circle-list">
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #react
+                  </li>
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #js
+                  </li>
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #node js
+                  </li>
+                  <li class="projects-circle-item">
+                    <p class="projects-circle"></p>
+                    #git
+                  </li>
+                </ul>
+              </div>
+              <h3 class="projects-text">
+                Programming Across Borders: Ideas, Technologies, Innovations
+              </h3>
+              <button
+                class="projects-btn"
+                onclick="window.open('https://mtsiuniak.github.io/headliner-2024/', 
+            '_blank')"
+              >
+                See project
+              </button>
+            </div>
+            <div class="projects-second-container">
+              <div class="projects-image">
+                <picture>
+                  <source
+                    media="(min-width:768px)"
+                    srcset="/headliner-2024/assets/project-tab-desk3-1689f0fe.jpg 1x, /headliner-2024/assets/project-tab-desk3@2x-bbf727ed.jpg 2x"
+                    type="image/jpg"
+                  />
+                  <source
+                    media="(max-width:767px)"
+                    srcset="/headliner-2024/assets/project3mob-b07e478c.jpg 1x, /headliner-2024/assets/project3mob@2x-83464b98.jpg 2x"
+                    type="image/jpg"
+                  />
+                  <img
+                    src="/headliner-2024/assets/project3mob-b07e478c.jpg"
+                    alt="Image 1"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="projects-swiper-pagination"></div>
-    <div class="projects-arrow-container">
-      <ul class="projects-arrow-list">
-        <li class="projects-arrow-item">
-          <a class="projects-arrow-accent" href="">
-            <svg class="projects-arrow" width="24" height="24">
-              <use href="/headliner-2024/assets/icon-ab561872.svg#icon-arrow-left-dark"></use></svg
-          ></a>
-        </li>
-        <li class="projects-arrow-item">
-          <a class="projects-arrow-accent" href="">
-            <svg class="projects-arrow" width="24" height="24">
-              <use href="/headliner-2024/assets/icon-ab561872.svg#icon-arrow-right-white"></use></svg
-          ></a>
-        </li>
-      </ul>
+
+      <div class="projects-swiper-pagination"></div>
+      <div class="projects-arrow-container">
+        <ul class="projects-arrow-list">
+          <div class="projects-btn-next">
+            <li class="projects-arrow-item">
+              <a class="projects-arrow-accent" href="">
+                <svg class="projects-arrow" width="24" height="24">
+                  <use href="/headliner-2024/assets/icon-ab561872.svg#icon-arrow-left-dark"></use></svg
+              ></a>
+            </li>
+          </div>
+          <div class="projects-btn-prev">
+            <li class="projects-arrow-item">
+              <a class="projects-arrow-accent" href="">
+                <svg class="projects-arrow" width="24" height="24">
+                  <use href="/headliner-2024/assets/icon-ab561872.svg#icon-arrow-right-white"></use></svg
+              ></a>
+            </li>
+          </div>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
