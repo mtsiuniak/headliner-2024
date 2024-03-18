@@ -151,11 +151,7 @@
 
 
 @media screen and (min-width: 768px) {
-    .container {
-        width: 768px;
-        padding-left: 32px;
-        padding-right: 32px;
-    }
+   
 
     .projects-section {
         padding-top: 48px;
@@ -214,8 +210,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-    
-
+   
     .projects-section {
         padding-top: 82px;
         padding-bottom: 82px;
