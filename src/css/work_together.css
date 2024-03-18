@@ -56,7 +56,14 @@ footer {
   line-height: 1.5;
 
   text-overflow: ellipsis;
+  transition: border-color 250ms linear;
 }
+
+.form-item:hover,
+.form-item:focus {
+  border-color: #fafafa;
+}
+
 .footer-form.success-email .form-item[name='email'] {
   border-bottom: 1px solid #3cbc81;
 }
@@ -110,6 +117,7 @@ footer {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2;
+  transition: background-color 250ms linear;
 }
 
 .btn-submit:hover,
@@ -269,10 +277,8 @@ footer ul {
     }
   }
   footer > .container {
-    /* display: inline; */
     max-width: 1100px;
     margin: 0 auto;
-    /* background-color: #e0373f; */
   }
 
   .title-box {

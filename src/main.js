@@ -141,8 +141,8 @@ function handSubmit(event) {
           title: 'Oops!',
           message: 'Something went wrong',
           progressBar: false,
-          position: 'topRight',
-          color: '#e08085',
+          position: 'topCenter',
+          color: '#1c1d20',
           messageColor: '#fafafa',
           titleColor: '#fafafa',
         });
