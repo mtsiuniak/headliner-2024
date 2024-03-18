@@ -77,8 +77,14 @@ fetch(URL)
     const markup = renderReviews(data);
  
     list.insertAdjacentHTML('beforeend', markup);
-    const swiper = new Swiper('#swiper2', {
-   
+    const swiper3 = new Swiper('#swiper3', {
+
+      modules: [Navigation, Keyboard, Mousewheel],
+      direction: 'horizontal',
+      speed: 300,
+      slidesPerView: 1,
+      spaceBetween: 16,
+
      on: {
      slideChange: function () {
        updateButtonsState();
@@ -100,10 +106,16 @@ fetch(URL)
        },
 
     navigation: {
-     nextEl: '.swiper-button-next',
-     prevEl: '.swiper-button-prev',
+     nextEl: '#swiper3.swiper-button-next',
+     prevEl: '#swiper3.swiper-button-prev',
       },
-     
+      keyboard: {
+        enabled: true,
+      },
+      mousewheel: {
+        enabled: true,
+        forceToAxis: true,
+      },
     });
      
      
@@ -113,29 +125,43 @@ fetch(URL)
  updateButtonsState();
  
  function updateButtonsState() {
-   if (swiper.isBeginning) {
+   if (swiper3.isBeginning) {
      myPrevButton.disabled = true;
    } else {
      myPrevButton.disabled = false;
    }
 
-   if (swiper.isEnd) {
+   if (swiper3.isEnd) {
      myNextButton.disabled = true;
    } else {
      myNextButton.disabled = false;
    }
  }
  myPrevButton.addEventListener('click', () => {
-   swiper.slidePrev();
+   swiper3.slidePrev();
  });
  
  myNextButton.addEventListener('click', () => {
-   swiper.slideNext();
+   swiper3.slideNext();
  });
    })
    .catch(error => console.log(error));
 
-   
+   const errorMsg = {
+    messageSize: '16',
+    messageLineHeight: '24',
+    backgroundColor: 'rgb(0,255,0)',
+    messageColor: 'rgb(255, 255, 255)',
+    titleColor: 'rgb(255, 255, 255)',
+    position: 'center',
+    close: 'rgb(255, 255, 255)',
+    maxWidth: '432px',
+  };
+
+  function messageError(error) {
+    errorMsg.message = `${error}reviews not found!`;
+    iziToast.error(errorMsg);
+  }
 
 function renderReviews(review) {
   return review
