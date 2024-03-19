@@ -161,7 +161,7 @@ const myNextButtonReview = document.querySelector('.review-btn-next');
 const divButtonNextReview = document.querySelector('.btn-next-review');
 const svgArrowNextReview = document.querySelector('.review-arrow-next');
 
-fetch(URL)
+
   fetch(URL)
   .then(response => {
     if (!response.ok) {
@@ -176,6 +176,13 @@ fetch(URL)
   })
   .then(data => {
     const markup = renderReviews(data);
+    if (markup === "") {
+      iziToast.error({
+        title: 'Error',
+        message: 'Sorry, reviews not found.',
+        position: 'bottomLeft'
+      });
+    }
    
     list.insertAdjacentHTML('beforeend', markup);
    const swiper3 = new Swiper('#swiper3', {
@@ -235,7 +242,13 @@ fetch(URL)
           }
         }
   })
-  .catch(error => console.log(error));
+    .catch(error => {
+    iziToast.error({
+        title: 'Error',
+        message: 'Error while fetching reviews from backend',
+        position: 'bottomLeft'
+      });
+  });
 // Reviews code end ============================
   
 
