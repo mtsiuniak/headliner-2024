@@ -9,20 +9,38 @@
         <span class="second-word">websites</span> that reflect each client's
         unique personality.
       </p>
-      <img
-        class="about-general-info-img"
-        srcset="
-          ./img/about_me/aboutme_mobile.jpg      343w,
-          ./img/about_me/aboutme_mobile@2x.jpg   686w,
-          ./img/about_me/aboutme_tablet.jpg      704w,
-          ./img/about_me/aboutme_tablet@2x.jpg  1408w,
-          ./img/about_me/aboutme_desktop.jpg     680w,
-          ./img/about_me/aboutme_desktop@2x.jpg 1360w
-        "
-        sizes="(min-width: 1440px) 680px, (min-width: 768px) 704px, (max-width: 767px) 343px"
-        src="../img/about_me/aboutme_mobile.png"
-        alt="My photo"
-      />
+      <picture>
+        <source
+          media="(min-width:1440px)"
+          srcset="
+            ./img/about_me/aboutme_desktop.jpg    1x,
+            ./img/about_me/aboutme_desktop@2x.jpg 2x
+          "
+          type="image/jpg"
+        />
+        <source
+          media="(min-width:768px)"
+          srcset="
+            ./img/about_me/aboutme_tablet.jpg    1x,
+            ./img/about_me/aboutme_tablet@2x.jpg 2x
+          "
+          type="image/jpg"
+        />
+        <source
+          media="(max-width:767px)"
+          srcset="
+            ./img/about_me/aboutme_mobile.jpg    1x,
+            ./img/about_me/aboutme_mobile@2x.jpg 2x
+          "
+          type="image/jpg"
+        />
+
+        <img
+          class="about-general-info-img"
+          src="./img/about_me/aboutme_mobile.jpg"
+          alt="My photo"
+        />
+      </picture>
     </div>
 
     <!-- Detail info -->
