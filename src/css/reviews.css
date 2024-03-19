@@ -14,6 +14,9 @@
     margin-right: auto;
   }
 
+  .review-buttons {
+    display: flex;
+  }
   .item-img {
     margin-bottom: 32px;
     border-radius: 10px;
@@ -82,13 +85,7 @@
 }
 
 
-#swiper3.my-swiper-buttons {
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
 
 
 #swiper3.my-swiper-button-prev,

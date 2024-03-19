@@ -141,6 +141,7 @@
 
 .projects-arrow-accent {
     display: flex;
+    background-color: transparent;
     width: 52px;
     height: 52px;
     align-items: center;

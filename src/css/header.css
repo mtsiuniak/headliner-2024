@@ -1,7 +1,6 @@
-/* css */
-
-.header-cont {
+.header-section {
   position: absolute;
+  top: 0;
   left: 50%;
   transform: translate(-50%);
 }
@@ -39,7 +38,9 @@
 .menu-under{
   display: none;
 }
+
 @media screen and (min-width: 768px) {
+
   .button-menu {
     display: none;
   }
@@ -49,7 +50,6 @@
     display: flex;
     justify-content: center;
   }
-
   .order-btn-menu {
     display: flex;
     align-items: center;
@@ -81,12 +81,12 @@
     display: block;
     position: absolute;
     top: 79px;
+    left: 6px;
     transition: opacity 1s ease;
   }
   .menu-under.visually-hidden {
     opacity: 0;
   }
-
   .list-item {
     display: flex;
     justify-content: center;
@@ -103,8 +103,4 @@
     color: #e0373f;
   }
 }
-@media screen and (min-width: 1440px) {
-  .box-container {
-    max-width: 1440px;
-  }
-}
+
