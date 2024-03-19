@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Inter Tight";
+    src: url("../fonts/InterTight-VariableFont_wght.woff");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+}
 
 body {
     font-family: "Inter Tight", sans-serif;
