@@ -238,16 +238,17 @@ fetch(URL)
   })
   .then(data => {
     const markup = renderReviews(data);
+   
     list.insertAdjacentHTML('beforeend', markup);
-    console.log(list)
-    
-    const swiper = new Swiper('#swiper3', {
-
+   const swiper = new Swiper('swiper3', {
+  
     on: {
+    // Оновлення стану кнопок після перемикання слайдів
     slideChange: function () {
       updateButtonsState();
     },
   },
+  
       breakpoints: {
         768: {
           slidesPerView: 2,
@@ -263,42 +264,15 @@ fetch(URL)
       },
 
  
+  
    navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
      },
-  
+    
    });
     
-  const myPrevButton = document.querySelector('.my-swiper-button-prev');
-  const myNextButton = document.querySelector('.my-swiper-button-next');
     
-updateButtonsState();
 
-function updateButtonsState() {
-  
-  if (swiper.isBeginning) {
-    myPrevButton.disabled = true;
-  } else {
-    myPrevButton.disabled = false;
-  }
-
-  if (swiper.isEnd) {
-    myNextButton.disabled = true;
-  } else {
-    myNextButton.disabled = false;
-  }
-}
-
-myPrevButton.addEventListener('click', () => {
-  swiper.slidePrev();
-});
-
-myNextButton.addEventListener('click', () => {
-  swiper.slideNext();
-});
   })
   .catch(error => console.log(error));
-
-
-
