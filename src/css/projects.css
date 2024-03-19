@@ -18,6 +18,9 @@
   text-transform: uppercase;
   margin-bottom: 32px;
 }
+.projects-arrow {
+  stroke: #fafafa;
+}
 
 .projects-first-container {
   background-color: rgba(250, 250, 250);

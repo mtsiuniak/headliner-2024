@@ -2,7 +2,6 @@ import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
-import axios from 'axios';
 import postRequestPortfolioApi from './js/postRequestPortfolioApi';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.css';
@@ -14,6 +13,7 @@ import { renderReviews } from './js/render-review';
 // hero background-image js code start
 heroBackgroundImage();
 // hero background-image end ========================
+
 
 // header js code start =============================
   const menuBox = document.querySelector('.menu-box');
@@ -54,7 +54,7 @@ heroBackgroundImage();
 
 
 
-//work_together
+//work_together =======================
 
 const modalBack = document.querySelector('.modal-background');
 const modalClose = document.querySelector('.modal-close');
@@ -125,7 +125,7 @@ emailInput.addEventListener('blur', () => {
   }
 });
 
-//  /work_together
+//  work_together =============
 
 
 // about-me start ==============
@@ -149,15 +149,13 @@ new Swiper('#swiper1', {
   slidesPerView: 2,
   spaceBetween: 0,
   breakpoints: {
-    // when window width is >= 320px
+    
     320: {
       slidesPerView: 2,
     },
-    // when window width is >= 768px
     768: {
       slidesPerView: 3,
     },
-    // when window width is >= 1440px
     1440: {
       slidesPerView: 6,
     }
@@ -173,54 +171,56 @@ const accordion2 = new Accordion('#accordion2', {
 // FAQ end ================
 
 
-
 // Projects start ==================
 const myPrevButton = document.querySelector('.projects-btn-prev');
-const divButtonPrev = document.querySelector('#btn-prev');
+const divButtonPrev = document.querySelector('.btn-prev');
+const svgArrowPrev = document.querySelector('.projects-arrow-prev');
 
 const myNextButton = document.querySelector('.projects-btn-next');
-const divButtonNext = document.querySelector('#btn-next');
+const divButtonNext = document.querySelector('.btn-next');
+const svgArrowNext = document.querySelector('.projects-arrow-next');
 
 const swiper2 = new Swiper('#swiper2', {
   direction: 'horizontal',
   on: {
     slideChange: function () {
-      updateButtonsState();
+      updateButtonsStateProject();
     },
   },
-  slidesPerView: 1,
-  freeMode: true,
-  swipeHandler: '.project-swiper-slide',
-  slidesPerGroup: 1,
+  
   navigation: {
     nextEl: '.projects-btn-next',
     prevEl: '.projects-btn-prev',
   },
 });
 
-
-updateButtonsState();
-function updateButtonsState() {
+updateButtonsStateProject();
+function updateButtonsStateProject() {
   if (swiper2.isBeginning) {
     myPrevButton.disabled = true;
-    divButtonPrev.style.backgroundColor = ' rgb(42, 38, 38)';
+    divButtonPrev.style.border = '1px solid #3B3B3B';
     divButtonPrev.style.cursor = 'not-allowed';
+    svgArrowPrev.style.stroke = '#3B3B3B';
   } else {
     myPrevButton.disabled = false;
-    divButtonPrev.style.backgroundColor = 'transparent';
+    divButtonPrev.style.border = '1px solid #FAFAFA';
     divButtonPrev.style.cursor = 'pointer';
+    svgArrowPrev.style.stroke = '#FAFAFA';
   }
 
   if (swiper2.isEnd) {
     myNextButton.disabled = true;
     divButtonNext.style.cursor = 'not-allowed';
-    divButtonNext.style.backgroundColor = ' rgb(42, 38, 38)';
+    divButtonNext.style.border = '1px solid #3B3B3B';
+    svgArrowNext.style.stroke = '#3B3B3B';
   } else {
     myNextButton.disabled = false;
     divButtonNext.style.cursor = 'pointer';
-    divButtonNext.style.backgroundColor = 'transparent';
+    divButtonNext.style.border = '1px solid #FAFAFA';
+    svgArrowNext.style.stroke = '#FAFAFA';
   }
 }
+
 
 // Projects end ==================================
 
@@ -228,6 +228,14 @@ function updateButtonsState() {
 
 const URL = 'https://portfolio-js.b.goit.study/api/reviews';
 const list = document.querySelector('#review-swiper-list');
+
+const myPrevButtonReview = document.querySelector('.review-btn-prev');
+const divButtonPrevReview = document.querySelector('.btn-prev-review');
+const svgArrowPrevReview = document.querySelector('.review-arrow-prev');
+
+const myNextButtonReview = document.querySelector('.review-btn-next');
+const divButtonNextReview = document.querySelector('.btn-next-review');
+const svgArrowNextReview = document.querySelector('.review-arrow-next');
 
 fetch(URL)
   .then(response => {
@@ -243,9 +251,30 @@ fetch(URL)
    const swiper3 = new Swiper('#swiper3', {
   
     on: {
-    // Оновлення стану кнопок після перемикання слайдів
     slideChange: function () {
-      updateButtonsState();
+      if (swiper3.isBeginning) {
+    myPrevButtonReview.disabled = true;
+    divButtonPrevReview.style.border = '1px solid #3B3B3B';
+    divButtonPrevReview.style.cursor = 'not-allowed';
+    svgArrowPrevReview.style.stroke = '#3B3B3B';
+  } else {
+    myPrevButtonReview.disabled = false;
+    divButtonPrevReview.style.border = '1px solid #FAFAFA';
+    divButtonPrevReview.style.cursor = 'pointer';
+    svgArrowPrevReview.style.stroke = '#FAFAFA';
+  }
+
+  if (swiper3.isEnd) {
+    myNextButtonReview.disabled = true;
+    divButtonNextReview.style.cursor = 'not-allowed';
+    divButtonNextReview.style.border = '1px solid #3B3B3B';
+    svgArrowNextReview.style.stroke = '#3B3B3B';
+  } else {
+    myNextButtonReview.disabled = false;
+    divButtonNextReview.style.cursor = 'pointer';
+    divButtonNextReview.style.border = '1px solid #FAFAFA';
+    svgArrowNextReview.style.stroke = '#FAFAFA';
+  }
     },
   },
   
@@ -263,16 +292,11 @@ fetch(URL)
         },
       },
 
- 
-  
    navigation: {
     nextEl: '.my-swiper-button-next',
     prevEl: '.my-swiper-button-prev',
      },
-    
    });
-    
-    
-
   })
   .catch(error => console.log(error));
+ 
