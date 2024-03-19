@@ -9,12 +9,6 @@ import { heroBackgroundImage } from './js/hero';
 import { renderReviews } from './js/render-review';
 
 
-
-// hero background-image js code start
-heroBackgroundImage();
-// hero background-image end ========================
-
-
 // header js code start =============================
   const menuBox = document.querySelector('.menu-box');
   const buttonOpenMenu = document.querySelector('.button-menu');
@@ -50,85 +44,15 @@ heroBackgroundImage();
     }
   });
 
-// header js code end ==================================
+// header js code end ===============================
 
 
-
-//work_together =======================
-
-const modalBack = document.querySelector('.modal-background');
-const modalClose = document.querySelector('.modal-close');
-const modal = document.querySelector('.modal');
-modalClose.addEventListener('click', closeModal);
-
-function closeModal(ev) {
-  if (ev.type === 'click' && ev.currentTarget === modalClose) {
-    modalBack.classList.add('visually-hidden');
-    document.removeEventListener('keydown', closeModal);
-  } else if (ev.keyCode === 27) {
-    modalBack.classList.add('visually-hidden');
-    document.removeEventListener('keydown', closeModal);
-  } else if (ev.type === 'click' && !modal.contains(ev.target)) {
-    modalBack.classList.add('visually-hidden');
-    document.removeEventListener('keydown', closeModal);
-  }
-}
-
-const form = document.querySelector('.footer-form');
-const emailInput = document.querySelector('input[name="email"]');
-form.addEventListener('submit', handSubmit);
-
-function handSubmit(event) {
-  event.preventDefault();
-  const userEmail = event.target.email.value.trim();
-  const userComment = event.target.comments.value.trim();
-  if (userEmail || userComment) {
-    const options = {
-      email: userEmail,
-      comment: userComment,
-    };
-    postRequestPortfolioApi(options)
-      .then(data => {
-        form.reset();
-        modalBack.classList.remove('visually-hidden');
-        document.addEventListener('keydown', closeModal);
-        modalBack.addEventListener('click', closeModal);
-      })
-      .catch(er => {
-        iziToast.error({
-          title: 'Oops!',
-          message: 'Something went wrong',
-          progressBar: false,
-          position: 'topCenter',
-          color: '#1c1d20',
-          messageColor: '#fafafa',
-          titleColor: '#fafafa',
-        });
-      });
-  }
-}
-
-emailInput.addEventListener('focus', () => {
-  if (form.classList.contains('success-email')) {
-    form.classList.remove('success-email');
-  }
-  if (form.classList.contains('failed-email')) {
-    form.classList.remove('failed-email');
-  }
-});
-
-emailInput.addEventListener('blur', () => {
-  if (emailInput.checkValidity()) {
-    form.classList.add('success-email');
-  } else {
-    form.classList.add('failed-email');
-  }
-});
-
-//  work_together =============
+// hero background-image star t======================
+heroBackgroundImage();
+// hero background-image end ========================
 
 
-// about-me start ==============
+// about-me start ====================================
 const accordionAboutMe = new Accordion('#accordion1', {
   showMultiple: true,
 });
@@ -221,8 +145,8 @@ function updateButtonsStateProject() {
   }
 }
 
-
 // Projects end ==================================
+
 
 // Reviews code start ============================
 
@@ -238,9 +162,15 @@ const divButtonNextReview = document.querySelector('.btn-next-review');
 const svgArrowNextReview = document.querySelector('.review-arrow-next');
 
 fetch(URL)
+  fetch(URL)
   .then(response => {
     if (!response.ok) {
-      throw new Error('Not found');
+      iziToast.error({
+        title: 'Error',
+        message: 'Sorry, reviews not found.',
+        position: 'bottomLeft'
+      });
+      throw new Error('Network response was not ok.');
     }
     return response.json();
   })
@@ -299,4 +229,79 @@ fetch(URL)
    });
   })
   .catch(error => console.log(error));
+// Reviews code end ============================
+  
+
+  //work_together start =======================
+
+const modalBack = document.querySelector('.modal-background');
+const modalClose = document.querySelector('.modal-close');
+const modal = document.querySelector('.modal');
+modalClose.addEventListener('click', closeModal);
+
+function closeModal(ev) {
+  if (ev.type === 'click' && ev.currentTarget === modalClose) {
+    modalBack.classList.add('visually-hidden');
+    document.removeEventListener('keydown', closeModal);
+  } else if (ev.keyCode === 27) {
+    modalBack.classList.add('visually-hidden');
+    document.removeEventListener('keydown', closeModal);
+  } else if (ev.type === 'click' && !modal.contains(ev.target)) {
+    modalBack.classList.add('visually-hidden');
+    document.removeEventListener('keydown', closeModal);
+  }
+}
+
+const form = document.querySelector('.footer-form');
+const emailInput = document.querySelector('input[name="email"]');
+form.addEventListener('submit', handSubmit);
+
+function handSubmit(event) {
+  event.preventDefault();
+  const userEmail = event.target.email.value.trim();
+  const userComment = event.target.comments.value.trim();
+  if (userEmail || userComment) {
+    const options = {
+      email: userEmail,
+      comment: userComment,
+    };
+    postRequestPortfolioApi(options)
+      .then(data => {
+        form.reset();
+        modalBack.classList.remove('visually-hidden');
+        document.addEventListener('keydown', closeModal);
+        modalBack.addEventListener('click', closeModal);
+      })
+      .catch(er => {
+        iziToast.error({
+          title: 'Oops!',
+          message: 'Something went wrong',
+          progressBar: false,
+          position: 'topCenter',
+          color: '#1c1d20',
+          messageColor: '#fafafa',
+          titleColor: '#fafafa',
+        });
+      });
+  }
+}
+
+emailInput.addEventListener('focus', () => {
+  if (form.classList.contains('success-email')) {
+    form.classList.remove('success-email');
+  }
+  if (form.classList.contains('failed-email')) {
+    form.classList.remove('failed-email');
+  }
+});
+
+emailInput.addEventListener('blur', () => {
+  if (emailInput.checkValidity()) {
+    form.classList.add('success-email');
+  } else {
+    form.classList.add('failed-email');
+  }
+});
+
+//  work_together =============
  
