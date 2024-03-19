@@ -6,168 +6,53 @@ import axios from 'axios';
 import postRequestPortfolioApi from './js/postRequestPortfolioApi';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.css';
+import { heroBackgroundImage } from './js/hero';
+import { renderReviews } from './js/render-review';
 
-// hero background-image
-const backgroundImageHero = document.querySelector('#hero-section');
-function heroBackgroundImage() {
-  const backgrounds = ['red', 'pink', 'blue', 'green'];
 
-  setInterval(function changeBackground() {
-    backgroundImageHero.className = '';
-    const randomIndex = Math.floor(Math.random() * backgrounds.length);
-    const randomClass = backgrounds[randomIndex];
-    backgroundImageHero.classList.add(randomClass);
-  }, 4000);
-}
+
+// hero background-image js code start
 heroBackgroundImage();
-//  /hero background-image
-// header
+// hero background-image end ========================
 
-const menuBox = document.querySelector(`.menu-box`);
-const buttonOpenMenu = document.querySelector(`.button-menu`);
-const buttonCloseMenu = document.querySelector(`.button-mob-menu`);
+// header js code start =============================
+  const menuBox = document.querySelector('.menu-box');
+  const buttonOpenMenu = document.querySelector('.button-menu');
+  const buttonCloseMenu = document.querySelector('.button-mob-menu');
+  const menuUnder = document.querySelector('.menu-under');
+  const buttonMenuUnder = document.querySelector('.menu-tablet-deck');
 
+  buttonOpenMenu.addEventListener("click", function(){
+      menuBox.classList.toggle("visually-hidden");
+  });
 
-buttonOpenMenu.addEventListener("click", function(){
-    menuBox.classList.toggle("visually-hidden");
-}
-)
-buttonCloseMenu.addEventListener("click", function(){
-    menuBox.classList.toggle("visually-hidden");
-}
-)
- const menuUnder = document.querySelector(`.menu-under`)
- const buttonMenuUnder = document.querySelector(`.menu-tablet-deck`)
- 
- buttonMenuUnder.addEventListener("click", function(){
-menuUnder.classList.toggle("visually-hidden");
+  buttonCloseMenu.addEventListener("click", function(){
+      menuBox.classList.toggle("visually-hidden");
+  });
 
- })
+  buttonMenuUnder.addEventListener("click", function(){
+      menuUnder.classList.toggle("visually-hidden");
+  });
 
-
-
- document.addEventListener('click', function(event) {
-  if (event.target.classList.contains('anchor-header-menu') || event.target.classList.contains('order-btn-menu-mob')) {
-    menuBox.classList.add('visually-hidden');
-  }
-});
-document.addEventListener('click', function(event) {
-  if (event.target.classList.contains('anchor-menu')) {
-    event.preventDefault();
-    const scrollId = event.target.getAttribute('href').substring(1);
-    const scrollSection = document.getElementById(scrollId);
-    scrollSection.scrollIntoView({ behavior: 'smooth'});
-    menuUnder.classList.toggle('visually-hidden');
-  }
-});
-// Reviews
-
-const URL = 'https://portfolio-js.b.goit.study/api/reviews';
-const list = document.querySelector('.reviews-list');
-
-fetch(URL)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Not found');
+  document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('anchor-header-menu') || event.target.classList.contains('order-btn-menu-mob')) {
+      menuBox.classList.add('visually-hidden');
     }
-    return response.json();
-  })
-  .then(data => {
+  });
 
-    const markup = renderReviews(data);
+  document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('anchor-menu')) {
+      event.preventDefault();
+      const scrollId = event.target.getAttribute('href').substring(1);
+      const scrollSection = document.getElementById(scrollId);
+      scrollSection.scrollIntoView({ behavior: 'smooth'});
+      menuUnder.classList.toggle('visually-hidden');
+    }
+  });
+
+// header js code end ==================================
 
 
-    console.log(markup);
- 
-    list.insertAdjacentHTML('beforeend', markup);
-
-    const swiper3 = new Swiper('#swiper3', {
-      direction: 'horizontal',
-      speed: 300,
-      slidesPerView: 1,
-      spaceBetween: 16,
-
-     on: {
-     slideChange: function () {
-       updateButtonsState();
-     },
-   },
-   
-       breakpoints: {
-         768: {
-           slidesPerView: 2,
-           slidesPerGroup: 1,
-           spaceBetween: 16,
-         },
-   
-         1440: {
-           slidesPerView: 4,
-           slidesPerGroup: 1,
-           spaceBetween: 18,
-         },
-       },
-
-    navigation: {
-     nextEl: '.my-swiper-button-next',
-     prevEl: 'my-swiper-button-prev',
-      },
-    });
-     
-     
-    const myPrevButton = document.querySelector('.my-swiper-button-prev');
-     const myNextButton = document.querySelector('.my-swiper-button-next');
-     
- updateButtonsState();
- 
- function updateButtonsState() {
-   if (swiper3.isBeginning) {
-     myPrevButton.disabled = true;
-   } else {
-     myPrevButton.disabled = false;
-   }
-
-   if (swiper3.isEnd) {
-     myNextButton.disabled = true;
-   } else {
-     myNextButton.disabled = false;
-   }
- }
- myPrevButton.addEventListener('click', () => {
-   swiper3.slidePrev();
- });
- 
- myNextButton.addEventListener('click', () => {
-   swiper3.slideNext();
- });
-   })
-   .catch((error) => {
-    iziToast.error({
-      title: 'Error',
-      message: 'Sorry, reviews not found.',
-      position: 'center',
-
-    });
-    
-  })
-   
-function renderReviews(review) {
-  return review
-    .map(({ _id, avatar_url, author, review }) => {
-      return `
-      <li class="reviews-list-item"id="${_id}">
-                            <img class="item-img "src="${avatar_url}" alt="${author}"
-                            width="48"
-                            height="48"
-                            loading="lazy"
-                            />
-                            <div class="opinion">
-                            <h3 class="author">${author}</h3>
-                            <p class="review">${review}</p>
-                                </div>
-                        </li>`;
-    })
-    .join('');
-}
 
 //work_together
 
@@ -243,7 +128,7 @@ emailInput.addEventListener('blur', () => {
 //  /work_together
 
 
-// about-me
+// about-me start ==============
 const accordionAboutMe = new Accordion('#accordion1', {
   showMultiple: true,
 });
@@ -278,83 +163,142 @@ new Swiper('#swiper1', {
     }
 }
 });
+// about-me end  ====================
 
 
-// FAQ
+// FAQ start ======================
 const accordion2 = new Accordion('#accordion2', {
   showMultiple: true,
 });
+// FAQ end ================
 
 
-// Projects======
+
+// Projects start ==================
+const myPrevButton = document.querySelector('.projects-btn-prev');
+const divButtonPrev = document.querySelector('#btn-prev');
+
+const myNextButton = document.querySelector('.projects-btn-next');
+const divButtonNext = document.querySelector('#btn-next');
 
 const swiper2 = new Swiper('#swiper2', {
-  // Optional parameters
   direction: 'horizontal',
   on: {
-    // Оновлення стану кнопок після перемикання слайдів
     slideChange: function () {
       updateButtonsState();
     },
   },
-
-    slidesPerView: 1,
+  slidesPerView: 1,
   freeMode: true,
   swipeHandler: '.project-swiper-slide',
   slidesPerGroup: 1,
-  //  spaceBetween: 50,
- 
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
- breakpoints: {
-      768: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 16,
-      },
-
-      1440: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 18,
-      },
-    },
-  // Navigation arrows
   navigation: {
-    nextEl: '.projects-btn-prev',
-    prevEl: '.projects-btn-next',
+    nextEl: '.projects-btn-next',
+    prevEl: '.projects-btn-prev',
   },
 });
 
-const myPrevButton = document.querySelector('.projects-btn-prev');
-    const myNextButton = document.querySelector('.projects-btn-next');
+
+updateButtonsState();
+function updateButtonsState() {
+  if (swiper2.isBeginning) {
+    myPrevButton.disabled = true;
+    divButtonPrev.style.backgroundColor = ' rgb(42, 38, 38)';
+    divButtonPrev.style.cursor = 'not-allowed';
+  } else {
+    myPrevButton.disabled = false;
+    divButtonPrev.style.backgroundColor = 'transparent';
+    divButtonPrev.style.cursor = 'pointer';
+  }
+
+  if (swiper2.isEnd) {
+    myNextButton.disabled = true;
+    divButtonNext.style.cursor = 'not-allowed';
+    divButtonNext.style.backgroundColor = ' rgb(42, 38, 38)';
+  } else {
+    myNextButton.disabled = false;
+    divButtonNext.style.cursor = 'pointer';
+    divButtonNext.style.backgroundColor = 'transparent';
+  }
+}
+
+// Projects end ==================================
+
+// Reviews code start ============================
+
+const URL = 'https://portfolio-js.b.goit.study/api/reviews';
+const list = document.querySelector('#review-swiper-list');
+
+fetch(URL)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Not found');
+    }
+    return response.json();
+  })
+  .then(data => {
+    const markup = renderReviews(data);
+    list.insertAdjacentHTML('beforeend', markup);
+    console.log(list)
+    
+    const swiper = new Swiper('#swiper3', {
+
+    on: {
+    slideChange: function () {
+      updateButtonsState();
+    },
+  },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 1,
+          spaceBetween: 16,
+        },
+  
+        1440: {
+          slidesPerView: 4,
+          slidesPerGroup: 1,
+          spaceBetween: 18,
+        },
+      },
+
  
+   navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+     },
+  
+   });
+    
+  const myPrevButton = document.querySelector('.my-swiper-button-prev');
+  const myNextButton = document.querySelector('.my-swiper-button-next');
+    
 updateButtonsState();
 
 function updateButtonsState() {
-  // Деактивувати кнопку назад, якщо поточний слайд - перший
-  if (swiper2.isBeginning) {
+  
+  if (swiper.isBeginning) {
     myPrevButton.disabled = true;
   } else {
     myPrevButton.disabled = false;
   }
 
-  // Деактивувати кнопку вперед, якщо поточний слайд - останній
-  if (swiper2.isEnd) {
+  if (swiper.isEnd) {
     myNextButton.disabled = true;
   } else {
     myNextButton.disabled = false;
   }
 }
-// обробники подій для вашого кнопок
+
 myPrevButton.addEventListener('click', () => {
-  swiper2.slidePrev();
+  swiper.slidePrev();
 });
 
 myNextButton.addEventListener('click', () => {
-  swiper2.slideNext();
+  swiper.slideNext();
 });
+  })
+  .catch(error => console.log(error));
+
+
+

@@ -1,25 +1,32 @@
-<!-- html код для секції reviews -->
-<!--<p>reviews</p>-->
-
 <section class="reviews-section" id="reviews">
-  <div class="reviews-container">
+  <div class="reviews-container container">
     <h2 class="reviews-title">Reviews</h2>
+
     <div class="swiper" id="swiper3">
-      <ul class="swiper-wraper reviews-list"> </ul>
-      <div class="my-swiper-buttons">
+      <!-- Additional required wrapper -->
+      <ul class="swiper-wrapper" id="review-swiper-list">
+        <!-- Slides -->
+
+      </ul>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="my-swiper-buttons swiper-button-prev">
         <button class="my-swiper-button-prev">
           <svg class="reviews-arrow-left" width="24" height="24">
             <use href="./img/icon.svg#icon-arrow-left-dark"></use>
           </svg>
         </button>
-        <button class="my-swiper-button-next">
+        <button class="my-swiper-button-next swiper-button-next">
           <svg class="reviews-arrow-right" width="24" height="24">
             <use href="./img/icon.svg#icon-arrow-right-white"></use>
           </svg>
         </button>
       </div>
+
+      <div class="swiper-scrollbar"></div>
     </div>
 
   </div>
-</div>
 </section>
