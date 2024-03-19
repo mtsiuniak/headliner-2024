@@ -95,7 +95,6 @@
 #accordion1 .ac .ac-trigger::after {
   line-height: 0;
   content: '';
-
   right: 0;
 }
 
