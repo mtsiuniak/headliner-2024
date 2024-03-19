@@ -240,7 +240,7 @@ fetch(URL)
     const markup = renderReviews(data);
    
     list.insertAdjacentHTML('beforeend', markup);
-   const swiper = new Swiper('swiper3', {
+   const swiper3 = new Swiper('#swiper3', {
   
     on: {
     // Оновлення стану кнопок після перемикання слайдів
@@ -266,8 +266,8 @@ fetch(URL)
  
   
    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.my-swiper-button-next',
+    prevEl: '.my-swiper-button-prev',
      },
     
    });

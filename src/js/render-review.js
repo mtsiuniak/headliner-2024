@@ -3,7 +3,7 @@ export function renderReviews(review) {
   return review
     .map(({ _id, avatar_url, author, review }) => {
       return `
-      <li class="reviews-list-item"id="${_id}">
+      <li class="reviews-list-item swiper-slide" id="${_id}">
                             <img class="item-img "src="${avatar_url}" alt="${author}"
                             width="48"
                             height="48"
