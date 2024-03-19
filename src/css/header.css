@@ -1,9 +1,8 @@
-/* css */
 
-.header-cont {
+.header-section {
   position: absolute;
-  left: 50%;
-  transform: translate(-50%);
+  top: 0;
+  left: 0;
 }
 .box-container {
   display: flex;
@@ -81,6 +80,7 @@
     display: block;
     position: absolute;
     top: 79px;
+    left: 6px;
     transition: opacity 1s ease;
   }
   .menu-under.visually-hidden {
@@ -103,8 +103,4 @@
     color: #e0373f;
   }
 }
-@media screen and (min-width: 1440px) {
-  .box-container {
-    max-width: 1440px;
-  }
-}
+

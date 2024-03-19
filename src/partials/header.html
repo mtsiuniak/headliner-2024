@@ -1,53 +1,43 @@
-<!-- html код для секції хедер -->
-<header class="header-cont">
-    <div class="box-container container ">
-      <div class="logo-cont">
-        <picture>
-            <source
-            media="(min-width:375px)"
-            srcset="
+<header class="header-section">
+  <div class="box-container container ">
+    <div class="logo-cont">
+      <picture>
+        <source media="(min-width:375px)" srcset="
             ./img/header/image1x.jpg 1x,
             ./img/header/image2x.jpg 2x
-            "
-          />
-          <img
-            src="./img/header/image1x.jpg"
-            alt="logo"
-            width="80"
-          height="80"
-          class="logo-img"
-          />
-          </picture>
-         <img src="./img/logo.svg" alt="name" class="logo-svg">
-          </svg>
+            " />
+        <img src="./img/header/image1x.jpg" alt="logo" width="80" height="80" class="logo-img" />
+      </picture>
+      <img src="./img/logo.svg" alt="name" class="logo-svg">
+      </svg>
     </div>
     <button type="button" class="button-menu">
       <svg class="svg-x-mob" width="28" height="28">
         <use href="./img/icon.svg#icon-menu"></use>
-        </svg>
+      </svg>
       </svg>
     </button>
     <div class="btn-menu">
-    <button class="menu-tablet-deck" type="button">
-      <span>Menu</span>
-    </button>
-  </div>
-      <a class="order-btn-menu" href="#footer-id">Order the project</a>
+      <button class="menu-tablet-deck" type="button">
+        <span>Menu</span>
+      </button>
     </div>
-    <div class="menu-under container visually-hidden">
-      <ul class="list-menu">
-        <li class="list-item">
-          <a class="anchor-menu" href="#about-me">About me</a>
-        </li>
-        <li class="list-item"> 
-          <a class="anchor-menu" href="#benefits-id">Benefits</a>
-        </li>
-        <li class="list-item">
-          <a class="anchor-menu" href="#projects-id">Projects</a>
-        </li>
-        <li class="list-item">
-          <a class="anchor-menu" href="#faq-section">FAQ</a>
-        </li>
-      </ul>
-    </div>    
+    <a class="order-btn-menu" href="#footer-id">Order the project</a>
+  </div>
+  <div class="menu-under container visually-hidden">
+    <ul class="list-menu">
+      <li class="list-item">
+        <a class="anchor-menu" href="#about-me">About me</a>
+      </li>
+      <li class="list-item">
+        <a class="anchor-menu" href="#benefits-id">Benefits</a>
+      </li>
+      <li class="list-item">
+        <a class="anchor-menu" href="#projects-id">Projects</a>
+      </li>
+      <li class="list-item">
+        <a class="anchor-menu" href="#faq-section">FAQ</a>
+      </li>
+    </ul>
+  </div>
 </header>
