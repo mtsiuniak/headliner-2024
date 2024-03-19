@@ -179,32 +179,11 @@ fetch(URL)
    
     list.insertAdjacentHTML('beforeend', markup);
    const swiper3 = new Swiper('#swiper3', {
-  
+  direction: 'horizontal',
     on: {
-    slideChange: function () {
-      if (swiper3.isBeginning) {
-    myPrevButtonReview.disabled = true;
-    divButtonPrevReview.style.border = '1px solid #3B3B3B';
-    divButtonPrevReview.style.cursor = 'not-allowed';
-    svgArrowPrevReview.style.stroke = '#3B3B3B';
-  } else {
-    myPrevButtonReview.disabled = false;
-    divButtonPrevReview.style.border = '1px solid #FAFAFA';
-    divButtonPrevReview.style.cursor = 'pointer';
-    svgArrowPrevReview.style.stroke = '#FAFAFA';
-  }
-
-  if (swiper3.isEnd) {
-    myNextButtonReview.disabled = true;
-    divButtonNextReview.style.cursor = 'not-allowed';
-    divButtonNextReview.style.border = '1px solid #3B3B3B';
-    svgArrowNextReview.style.stroke = '#3B3B3B';
-  } else {
-    myNextButtonReview.disabled = false;
-    divButtonNextReview.style.cursor = 'pointer';
-    divButtonNextReview.style.border = '1px solid #FAFAFA';
-    svgArrowNextReview.style.stroke = '#FAFAFA';
-  }
+       slideChange: function () {
+        updateButtonsStateReview();
+       
     },
   },
   
@@ -226,7 +205,35 @@ fetch(URL)
     nextEl: '.my-swiper-button-next',
     prevEl: '.my-swiper-button-prev',
      },
-   });
+     
+   }
+    );
+    updateButtonsStateReview();
+     function updateButtonsStateReview() {
+          if (swiper3.isBeginning) {
+            myPrevButtonReview.disabled = true;
+            divButtonPrevReview.style.border = '1px solid #3B3B3B';
+            divButtonPrevReview.style.cursor = 'not-allowed';
+            svgArrowPrevReview.style.stroke = '#3B3B3B';
+          } else {
+            myPrevButtonReview.disabled = false;
+            divButtonPrevReview.style.border = '1px solid #FAFAFA';
+            divButtonPrevReview.style.cursor = 'pointer';
+            svgArrowPrevReview.style.stroke = '#FAFAFA';
+          }
+
+          if (swiper3.isEnd) {
+            myNextButtonReview.disabled = true;
+            divButtonNextReview.style.cursor = 'not-allowed';
+            divButtonNextReview.style.border = '1px solid #3B3B3B';
+            svgArrowNextReview.style.stroke = '#3B3B3B';
+          } else {
+            myNextButtonReview.disabled = false;
+            divButtonNextReview.style.cursor = 'pointer';
+            divButtonNextReview.style.border = '1px solid #FAFAFA';
+            svgArrowNextReview.style.stroke = '#FAFAFA';
+          }
+        }
   })
   .catch(error => console.log(error));
 // Reviews code end ============================
