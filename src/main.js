@@ -2,55 +2,55 @@ import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
-import postRequestPortfolioApi from './js/postRequestPortfolioApi';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.css';
 import { heroBackgroundImage } from './js/hero';
 import { renderReviews } from './js/render-review';
-
+import './js/work_together';
 
 // header js code start =============================
-  const menuBox = document.querySelector('.menu-box');
-  const buttonOpenMenu = document.querySelector('.button-menu');
-  const buttonCloseMenu = document.querySelector('.button-mob-menu');
-  const menuUnder = document.querySelector('.menu-under');
-  const buttonMenuUnder = document.querySelector('.menu-tablet-deck');
+const menuBox = document.querySelector('.menu-box');
+const buttonOpenMenu = document.querySelector('.button-menu');
+const buttonCloseMenu = document.querySelector('.button-mob-menu');
+const menuUnder = document.querySelector('.menu-under');
+const buttonMenuUnder = document.querySelector('.menu-tablet-deck');
 
-  buttonOpenMenu.addEventListener("click", function(){
-      menuBox.classList.toggle("visually-hidden");
-  });
+buttonOpenMenu.addEventListener('click', function () {
+  menuBox.classList.toggle('visually-hidden');
+});
 
-  buttonCloseMenu.addEventListener("click", function(){
-      menuBox.classList.toggle("visually-hidden");
-  });
+buttonCloseMenu.addEventListener('click', function () {
+  menuBox.classList.toggle('visually-hidden');
+});
 
-  buttonMenuUnder.addEventListener("click", function(){
-      menuUnder.classList.toggle("visually-hidden");
-  });
+buttonMenuUnder.addEventListener('click', function () {
+  menuUnder.classList.toggle('visually-hidden');
+});
 
-  document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('anchor-header-menu') || event.target.classList.contains('order-btn-menu-mob')) {
-      menuBox.classList.add('visually-hidden');
-    }
-  });
+document.addEventListener('click', function (event) {
+  if (
+    event.target.classList.contains('anchor-header-menu') ||
+    event.target.classList.contains('order-btn-menu-mob')
+  ) {
+    menuBox.classList.add('visually-hidden');
+  }
+});
 
-  document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('anchor-menu')) {
-      event.preventDefault();
-      const scrollId = event.target.getAttribute('href').substring(1);
-      const scrollSection = document.getElementById(scrollId);
-      scrollSection.scrollIntoView({ behavior: 'smooth'});
-      menuUnder.classList.toggle('visually-hidden');
-    }
-  });
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('anchor-menu')) {
+    event.preventDefault();
+    const scrollId = event.target.getAttribute('href').substring(1);
+    const scrollSection = document.getElementById(scrollId);
+    scrollSection.scrollIntoView({ behavior: 'smooth' });
+    menuUnder.classList.toggle('visually-hidden');
+  }
+});
 
 // header js code end ===============================
-
 
 // hero background-image star t======================
 heroBackgroundImage();
 // hero background-image end ========================
-
 
 // about-me start ====================================
 const accordionAboutMe = new Accordion('#accordion1', {
@@ -73,7 +73,6 @@ new Swiper('#swiper1', {
   slidesPerView: 2,
   spaceBetween: 0,
   breakpoints: {
-    
     320: {
       slidesPerView: 2,
     },
@@ -82,18 +81,16 @@ new Swiper('#swiper1', {
     },
     1440: {
       slidesPerView: 6,
-    }
-}
+    },
+  },
 });
 // about-me end  ====================
-
 
 // FAQ start ======================
 const accordion2 = new Accordion('#accordion2', {
   showMultiple: true,
 });
 // FAQ end ================
-
 
 // Projects start ==================
 const myPrevButton = document.querySelector('.projects-btn-prev');
@@ -111,7 +108,7 @@ const swiper2 = new Swiper('#swiper2', {
       updateButtonsStateProject();
     },
   },
-  
+
   navigation: {
     nextEl: '.projects-btn-next',
     prevEl: '.projects-btn-prev',
@@ -147,7 +144,6 @@ function updateButtonsStateProject() {
 
 // Projects end ==================================
 
-
 // Reviews code start ============================
 
 const URL = 'https://portfolio-js.b.goit.study/api/reviews';
@@ -161,48 +157,46 @@ const myNextButtonReview = document.querySelector('.review-btn-next');
 const divButtonNextReview = document.querySelector('.btn-next-review');
 const svgArrowNextReview = document.querySelector('.review-arrow-next');
 
-
-  fetch(URL)
+fetch(URL)
   .then(response => {
     if (!response.ok) {
       const showNews = document.querySelector('.show-news');
-      console.log(showNews)
-      showNews.textContent ="No reviews found"
-      showNews.style.textAlign = "center";
-      showNews.style.fontSize = "24px";
+      console.log(showNews);
+      showNews.textContent = 'No reviews found';
+      showNews.style.textAlign = 'center';
+      showNews.style.fontSize = '24px';
       showNews.style.color = 'rgba(250, 250, 250, 0.4)';
       throw new Error('Network response was not ok.');
     }
-    
+
     return response.json();
   })
   .then(data => {
     const markup = renderReviews(data);
-    if (markup === "") {
+    if (markup === '') {
       iziToast.error({
         title: 'Error',
         message: 'Sorry, reviews not found.',
-        position: 'bottomLeft'
+        position: 'bottomLeft',
       });
     }
-   
+
     list.insertAdjacentHTML('beforeend', markup);
-   const swiper3 = new Swiper('#swiper3', {
-  direction: 'horizontal',
-    on: {
-       slideChange: function () {
-        updateButtonsStateReview();
-       
-    },
-  },
-  
+    const swiper3 = new Swiper('#swiper3', {
+      direction: 'horizontal',
+      on: {
+        slideChange: function () {
+          updateButtonsStateReview();
+        },
+      },
+
       breakpoints: {
         768: {
           slidesPerView: 2,
           slidesPerGroup: 1,
           spaceBetween: 16,
         },
-  
+
         1440: {
           slidesPerView: 4,
           slidesPerGroup: 1,
@@ -210,129 +204,53 @@ const svgArrowNextReview = document.querySelector('.review-arrow-next');
         },
       },
 
-   navigation: {
-    nextEl: '.my-swiper-button-next',
-    prevEl: '.my-swiper-button-prev',
-     },
-     
-   }
-    );
+      navigation: {
+        nextEl: '.my-swiper-button-next',
+        prevEl: '.my-swiper-button-prev',
+      },
+    });
     updateButtonsStateReview();
-     function updateButtonsStateReview() {
-          if (swiper3.isBeginning) {
-            myPrevButtonReview.disabled = true;
-            divButtonPrevReview.style.border = '1px solid #3B3B3B';
-            divButtonPrevReview.style.cursor = 'not-allowed';
-            svgArrowPrevReview.style.stroke = '#3B3B3B';
-          } else {
-            myPrevButtonReview.disabled = false;
-            divButtonPrevReview.style.border = '1px solid #FAFAFA';
-            divButtonPrevReview.style.cursor = 'pointer';
-            svgArrowPrevReview.style.stroke = '#FAFAFA';
-          }
+    function updateButtonsStateReview() {
+      if (swiper3.isBeginning) {
+        myPrevButtonReview.disabled = true;
+        divButtonPrevReview.style.border = '1px solid #3B3B3B';
+        divButtonPrevReview.style.cursor = 'not-allowed';
+        svgArrowPrevReview.style.stroke = '#3B3B3B';
+      } else {
+        myPrevButtonReview.disabled = false;
+        divButtonPrevReview.style.border = '1px solid #FAFAFA';
+        divButtonPrevReview.style.cursor = 'pointer';
+        svgArrowPrevReview.style.stroke = '#FAFAFA';
+      }
 
-          if (swiper3.isEnd) {
-            myNextButtonReview.disabled = true;
-            divButtonNextReview.style.cursor = 'not-allowed';
-            divButtonNextReview.style.border = '1px solid #3B3B3B';
-            svgArrowNextReview.style.stroke = '#3B3B3B';
-          } else {
-            myNextButtonReview.disabled = false;
-            divButtonNextReview.style.cursor = 'pointer';
-            divButtonNextReview.style.border = '1px solid #FAFAFA';
-            svgArrowNextReview.style.stroke = '#FAFAFA';
-          }
-        }
+      if (swiper3.isEnd) {
+        myNextButtonReview.disabled = true;
+        divButtonNextReview.style.cursor = 'not-allowed';
+        divButtonNextReview.style.border = '1px solid #3B3B3B';
+        svgArrowNextReview.style.stroke = '#3B3B3B';
+      } else {
+        myNextButtonReview.disabled = false;
+        divButtonNextReview.style.cursor = 'pointer';
+        divButtonNextReview.style.border = '1px solid #FAFAFA';
+        svgArrowNextReview.style.stroke = '#FAFAFA';
+      }
+    }
   })
-    .catch(error => {
+  .catch(error => {
     iziToast.error({
-        title: 'Error',
-        message: 'Error while fetching reviews from server',
-        position: 'bottomLeft'
-      });
+      title: 'Error',
+      message: 'Error while fetching reviews from server',
+      position: 'bottomLeft',
+    });
   });
 // Reviews code end ============================
-  
-
-  //work_together start =======================
-
-const modalBack = document.querySelector('.modal-background');
-const modalClose = document.querySelector('.modal-close');
-const modal = document.querySelector('.modal');
-modalClose.addEventListener('click', closeModal);
-
-function closeModal(ev) {
-  if (ev.type === 'click' && ev.currentTarget === modalClose) {
-    modalBack.classList.add('visually-hidden');
-    document.removeEventListener('keydown', closeModal);
-  } else if (ev.keyCode === 27) {
-    modalBack.classList.add('visually-hidden');
-    document.removeEventListener('keydown', closeModal);
-  } else if (ev.type === 'click' && !modal.contains(ev.target)) {
-    modalBack.classList.add('visually-hidden');
-    document.removeEventListener('keydown', closeModal);
-  }
-}
-
-const form = document.querySelector('.footer-form');
-const emailInput = document.querySelector('input[name="email"]');
-form.addEventListener('submit', handSubmit);
-
-function handSubmit(event) {
-  event.preventDefault();
-  const userEmail = event.target.email.value.trim();
-  const userComment = event.target.comments.value.trim();
-  if (userEmail || userComment) {
-    const options = {
-      email: userEmail,
-      comment: userComment,
-    };
-    postRequestPortfolioApi(options)
-      .then(data => {
-        form.reset();
-        modalBack.classList.remove('visually-hidden');
-        document.addEventListener('keydown', closeModal);
-        modalBack.addEventListener('click', closeModal);
-      })
-      .catch(er => {
-        iziToast.error({
-          title: 'Oops!',
-          message: 'Something went wrong',
-          progressBar: false,
-          position: 'topCenter',
-          color: '#1c1d20',
-          messageColor: '#fafafa',
-          titleColor: '#fafafa',
-        });
-      });
-  }
-}
-
-emailInput.addEventListener('focus', () => {
-  if (form.classList.contains('success-email')) {
-    form.classList.remove('success-email');
-  }
-  if (form.classList.contains('failed-email')) {
-    form.classList.remove('failed-email');
-  }
-});
-
-emailInput.addEventListener('blur', () => {
-  if (emailInput.checkValidity()) {
-    form.classList.add('success-email');
-  } else {
-    form.classList.add('failed-email');
-  }
-});
-
-//  work_together =============
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
     });
-}); 
+  });
+});

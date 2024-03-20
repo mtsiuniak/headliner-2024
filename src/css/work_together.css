@@ -2,12 +2,12 @@
 footer {
   padding: 32px 0;
   position: relative;
-  background: url('../img/work_together/bkgMobile.png') no-repeat right;
+  background: url('../img/work_together/bkgMobile.png') repeat-y right;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   footer {
-    background: url('../img/work_together/bkgMobile@2x.png') no-repeat right;
+    background: url('../img/work_together/bkgMobile@2x.png') repeat-y right;
   }
 }
 
@@ -142,6 +142,12 @@ footer ul {
   font-weight: 500;
   line-height: 1;
   text-align: center;
+  transition: border-color 250ms linear;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  border-color: #fafafa;
 }
 
 /*----- modal -----*/
@@ -152,7 +158,18 @@ footer ul {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1000;
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
+
+.modal-background.visible {
+  opacity: 1;
   z-index: 1000;
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 .modal {
@@ -208,12 +225,12 @@ footer ul {
   footer {
     padding-top: 85px;
     padding-bottom: 169px;
-    background: url('../img/work_together/bkgTablet.png') no-repeat right;
+    background: url('../img/work_together/bkgTablet.png') repeat-y right;
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     footer {
-      background: url('../img/work_together/bkgTablet@2x.png') no-repeat right;
+      background: url('../img/work_together/bkgTablet@2x.png') repeat-y right;
     }
   }
   .title-box {
@@ -260,7 +277,7 @@ footer ul {
   .modal {
     max-width: 500px;
     width: 495px;
-    padding: 64px 56px;
+    padding: 64px 58px;
   }
 }
 
@@ -268,15 +285,14 @@ footer ul {
   footer {
     padding-top: 85px;
     padding-bottom: 169px;
-    /* padding: 85px 195px 169px; */
-    background: url('../img/work_together/bkgDesktop.png') no-repeat right;
+    background: url('../img/work_together/bkgDesktop.png') repeat-y right;
   }
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     footer {
-      background: url('../img/work_together/bkgDesktop@2x.png') no-repeat right;
+      background: url('../img/work_together/bkgDesktop@2x.png') repeat-y right;
     }
   }
-  footer > .container {
+  .footer-container {
     max-width: 1100px;
     margin: 0 auto;
   }
@@ -304,4 +320,16 @@ footer ul {
     top: 100px;
     left: 70px;
   }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #494848;
+  border-radius: 10px;
 }
