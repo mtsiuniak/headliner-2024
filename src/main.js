@@ -165,13 +165,15 @@ const svgArrowNextReview = document.querySelector('.review-arrow-next');
   fetch(URL)
   .then(response => {
     if (!response.ok) {
-      iziToast.error({
-        title: 'Error',
-        message: 'Sorry, reviews not found.',
-        position: 'bottomLeft'
-      });
+      const showNews = document.querySelector('.show-news');
+      console.log(showNews)
+      showNews.textContent ="No reviews found"
+      showNews.style.textAlign = "center";
+      showNews.style.fontSize = "24px";
+      showNews.style.color = 'rgba(250, 250, 250, 0.4)';
       throw new Error('Network response was not ok.');
     }
+    
     return response.json();
   })
   .then(data => {
@@ -245,7 +247,7 @@ const svgArrowNextReview = document.querySelector('.review-arrow-next');
     .catch(error => {
     iziToast.error({
         title: 'Error',
-        message: 'Error while fetching reviews from backend',
+        message: 'Error while fetching reviews from server',
         position: 'bottomLeft'
       });
   });
