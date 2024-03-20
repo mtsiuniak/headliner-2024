@@ -265,12 +265,15 @@ function closeModal(ev) {
   if (ev.type === 'click' && ev.currentTarget === modalClose) {
     modalBack.classList.add('visually-hidden');
     document.removeEventListener('keydown', closeModal);
+    document.body.style.overflow = 'auto';
   } else if (ev.keyCode === 27) {
     modalBack.classList.add('visually-hidden');
     document.removeEventListener('keydown', closeModal);
+    document.body.style.overflow = 'auto';
   } else if (ev.type === 'click' && !modal.contains(ev.target)) {
     modalBack.classList.add('visually-hidden');
     document.removeEventListener('keydown', closeModal);
+    document.body.style.overflow = 'auto';
   }
 }
 
@@ -290,6 +293,7 @@ function handSubmit(event) {
     postRequestPortfolioApi(options)
       .then(data => {
         form.reset();
+         document.body.style.overflow = 'hidden';
         modalBack.classList.remove('visually-hidden');
         document.addEventListener('keydown', closeModal);
         modalBack.addEventListener('click', closeModal);
