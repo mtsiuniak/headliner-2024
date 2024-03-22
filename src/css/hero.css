@@ -36,7 +36,7 @@
      letter-spacing: -0.03em;
      text-transform: uppercase;
      color: #fafafa;
-     min-width: 343px;
+     width:  100%;
  }
 .hero-button-link {
     border: 1px solid rgba(250, 250, 250, 0.2);
@@ -75,7 +75,7 @@
 }
 .hero-title {
     font-size: 90px;
-    min-width: 632px;
+    width: 632px;
     margin-left: auto;
     margin-right: auto;
 }
